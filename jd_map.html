@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh-CN">
-	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 </head>
@@ -205,7 +205,7 @@
 		height: 7px;
 		margin-top: 8px;
 	}
-	/*ÁĞ±í*/
+	/*åˆ—è¡¨*/
 	.o2o-layer .address-wrap .address-list{
 		clear: both;
 		height: 400px;
@@ -585,7 +585,7 @@
 
 </style>
 <script>
-	//·ÖÒ³
+	//åˆ†é¡µ
 	var page = {
 		pageSize:10,
 		currentPage:1,
@@ -601,22 +601,22 @@
 			}
 		},
 		getPageCount:function () {
-			// ×ÜÌõÊı/Ã¿Ò³ÏÔÊ¾µÄÌõÊı=×ÜÒ³Êı
+			// æ€»æ¡æ•°/æ¯é¡µæ˜¾ç¤ºçš„æ¡æ•°=æ€»é¡µæ•°
 			var size = this.recordCount / this.pageSize;
-			// ×îºóÒ»Ò³µÄÌõÊı
+			// æœ€åä¸€é¡µçš„æ¡æ•°
 			var mod = this.recordCount % this.pageSize;
 			if (mod != 0)
 				size++;
-			size = Math.floor(size);//È¡Õû
+			size = Math.floor(size);//å–æ•´
 			return this.recordCount == 0 ? 0 : size;
 		},
 		pageView:function (){
-			var paui = '<span>¹²'+ page.recordCount +'¼ÒÃÅµê</span>';
-			//Ò³ÂëÏÔÊ¾
+			var paui = '<span>å…±'+ page.recordCount +'å®¶é—¨åº—</span>';
+			//é¡µç æ˜¾ç¤º
 			var pageNumUi = "<span><em>";
 			var pageCount = this.getPageCount();
 			pageNumUi += this.currentPage+"</em>/"+pageCount+"</span>";
-			//·­Ò³°´Å¥
+			//ç¿»é¡µæŒ‰é’®
 			var flipUi = '<a id="preva" onclick="page.prevPage();" href="#none"';
 			if(this.currentPage == 1){
 				flipUi += ' class="prev disabled-prev"';
@@ -650,12 +650,12 @@
 		}
 	};
 
-	//µØÍ¼Õ¹Ê¾
+	//åœ°å›¾å±•ç¤º
 	var mapControl = {
 		opts: {
-			width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-			height: 275,          // ĞÅÏ¢´°¿Ú¸ß¶È
-			enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+			width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+			height: 275,          // ä¿¡æ¯çª—å£é«˜åº¦
+			enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 		},
 		coordsAddrArray: [],
 
@@ -666,35 +666,35 @@
 						var optsSet = {};
 						if(bigSize == 3){
 							optsSet = {
-								width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-								height: 277,          // ĞÅÏ¢´°¿Ú¸ß¶È
-								enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+								width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+								height: 277,          // ä¿¡æ¯çª—å£é«˜åº¦
+								enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 							}
 						}else if(bigSize == 2){
 							optsSet = {
-								width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-								height: 205,          // ĞÅÏ¢´°¿Ú¸ß¶È
-								enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+								width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+								height: 205,          // ä¿¡æ¯çª—å£é«˜åº¦
+								enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 							}
 						}else if(bigSize == 1){
 							optsSet = {
-								width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-								height: 167,          // ĞÅÏ¢´°¿Ú¸ß¶È
-								enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+								width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+								height: 167,          // ä¿¡æ¯çª—å£é«˜åº¦
+								enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 							}
 						}else {
 							optsSet = {
-								width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-								height: 207,          // ĞÅÏ¢´°¿Ú¸ß¶È
-								enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+								width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+								height: 207,          // ä¿¡æ¯çª—å£é«˜åº¦
+								enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 							}
 						}
-						var infoWindow = new BMap.InfoWindow(content,optsSet);  // ´´½¨ĞÅÏ¢´°¿Ú¶ÔÏó
-						clo2oMap.openInfoWindow(infoWindow,point); //¿ªÆôĞÅÏ¢´°¿Ú
+						var infoWindow = new BMap.InfoWindow(content,optsSet);  // åˆ›å»ºä¿¡æ¯çª—å£å¯¹è±¡
+						clo2oMap.openInfoWindow(infoWindow,point); //å¼€å¯ä¿¡æ¯çª—å£
 					}
 			);
 		},
-		//³õÊ¼»¯½çÃæ
+		//åˆå§‹åŒ–ç•Œé¢
 		initMap : function () {
 			for(var i=0;i<this.coordsAddrArray.length;i++){
 				//
@@ -733,19 +733,19 @@
 					}
 					if(type4sState != ''){
 						if(type4sState == '1'){
-							type4s = '4sµê';
-							type4sStr = 'Ö÷»ú³§¼ÒÊÚÈ¨µÄ4SÃÅµê';
+							type4s = '4såº—';
+							type4sStr = 'ä¸»æœºå‚å®¶æˆæƒçš„4Sé—¨åº—';
 						}else if(type4sState == '2'){
-							type4s = 'Î¬ĞŞµê';
-							type4sStr = '¾ßÓĞĞĞÒµÎ¬ĞŞ×ÊÖÊµÄÃÅµê/Î¬ĞŞ³§';
+							type4s = 'ç»´ä¿®åº—';
+							type4sStr = 'å…·æœ‰è¡Œä¸šç»´ä¿®èµ„è´¨çš„é—¨åº—/ç»´ä¿®å‚';
 						}else if(type4sState == '3'){
-							type4s = 'ÃÀÈİµê';
-							type4sStr = '¾­ÓªÏ´³µ¡¢ÃÀÈİ¡¢ÌùÄ¤Ïà¹Ø·şÎñµÄÃÅµê';
+							type4s = 'ç¾å®¹åº—';
+							type4sStr = 'ç»è¥æ´—è½¦ã€ç¾å®¹ã€è´´è†œç›¸å…³æœåŠ¡çš„é—¨åº—';
 						}
 					}
 					if(jdCertState == '1'){
-						jdCert = "¾©¶«ÈÏÖ¤";
-						jdCertStr = "¾©¶«ÓÃ»§µ½µêÏíÊÜÓÅÏÈ·şÎñ";
+						jdCert = "äº¬ä¸œè®¤è¯";
+						jdCertStr = "äº¬ä¸œç”¨æˆ·åˆ°åº—äº«å—ä¼˜å…ˆæœåŠ¡";
 					}
 
 					zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
@@ -762,7 +762,7 @@
 				var val = this.coordsAddrArray[i][5];
 				myIcon.setImageOffset(new BMap.Size(-(Math.floor(val/10)*20), -(val%10)*30));
 				var newPoint = new BMap.Point(this.coordsAddrArray[i][1],this.coordsAddrArray[i][0]);
-				var marker = new BMap.Marker(newPoint,{icon:myIcon});  // ´´½¨±ê×¢
+				var marker = new BMap.Marker(newPoint,{icon:myIcon});  // åˆ›å»ºæ ‡æ³¨
 				var zContent = '<div class="address-tips">';
 				zContent += '       <a href="#none" class="close"></a>';
 				zContent += '       <i class="arrow"></i>';
@@ -770,10 +770,10 @@
 				zContent += '           <dt>' + this.coordsAddrArray[i][3] + '</dt>';
 				zContent += '           <dd class="address">' + this.coordsAddrArray[i][4] + '</dd>';
 				if(viewPhone != '') {
-					zContent += '           <dd>¿Í·şµç»°£º' + viewPhone + '</dd>';
+					zContent += '           <dd>å®¢æœç”µè¯ï¼š' + viewPhone + '</dd>';
 				}
 				if(businessTime != '') {
-					zContent += '           <dd>ÓªÒµÊ±¼ä£º' + businessTime + '</dd>';
+					zContent += '           <dd>è¥ä¸šæ—¶é—´ï¼š' + businessTime + '</dd>';
 				}
 				zContent += '           <dd>';
 				zContent += '               <span class="tag1">'+type4s;
@@ -795,14 +795,14 @@
 				zContent += '       </dl>';
 				if(zongheScore != '') {
 					zContent += '       <ul class="score-tips">';
-					zContent += '           <li class="total">×ÛºÏÆÀ·Ö<span>' + zongheScore + '</span></li>';
-					zContent += '           <li>·şÎñÌ¬¶È<span>' + serviceScore + '</span></li>';
-					zContent += '           <li>·şÎñË®Æ½<span>' + levelScore + '</span></li>';
-					zContent += '           <li>ÃÅµê»·¾³<span>' + evnScore + '</span></li>';
+					zContent += '           <li class="total">ç»¼åˆè¯„åˆ†<span>' + zongheScore + '</span></li>';
+					zContent += '           <li>æœåŠ¡æ€åº¦<span>' + serviceScore + '</span></li>';
+					zContent += '           <li>æœåŠ¡æ°´å¹³<span>' + levelScore + '</span></li>';
+					zContent += '           <li>é—¨åº—ç¯å¢ƒ<span>' + evnScore + '</span></li>';
 					zContent += '       </ul>';
 				}
 				zContent += '    </div>';
-				clo2oMap.addOverlay(marker);               // ½«±ê×¢Ìí¼Óµ½µØÍ¼ÖĞ
+				clo2oMap.addOverlay(marker);               // å°†æ ‡æ³¨æ·»åŠ åˆ°åœ°å›¾ä¸­
 				var bigSize = 3;
 				if((this.coordsAddrArray[i][7] != undefined && this.coordsAddrArray[i][7][14] && this.coordsAddrArray[i][7][14] != '') && viewPhone != '' && zongheScore!=''){
 					bigSize = 3;
@@ -864,19 +864,19 @@
 				}
 				if(type4sState != ''){
 					if(type4sState == '1'){
-						type4s = '4sµê';
-						type4sStr = 'Ö÷»ú³§¼ÒÊÚÈ¨µÄ4SÃÅµê';
+						type4s = '4såº—';
+						type4sStr = 'ä¸»æœºå‚å®¶æˆæƒçš„4Sé—¨åº—';
 					}else if(type4sState == '2'){
-						type4s = 'Î¬ĞŞµê';
-						type4sStr = '¾ßÓĞĞĞÒµÎ¬ĞŞ×ÊÖÊµÄÃÅµê/Î¬ĞŞ³§';
+						type4s = 'ç»´ä¿®åº—';
+						type4sStr = 'å…·æœ‰è¡Œä¸šç»´ä¿®èµ„è´¨çš„é—¨åº—/ç»´ä¿®å‚';
 					}else if(type4sState == '3'){
-						type4s = 'ÃÀÈİµê';
-						type4sStr = '¾­ÓªÏ´³µ¡¢ÃÀÈİ¡¢ÌùÄ¤Ïà¹Ø·şÎñµÄÃÅµê';
+						type4s = 'ç¾å®¹åº—';
+						type4sStr = 'ç»è¥æ´—è½¦ã€ç¾å®¹ã€è´´è†œç›¸å…³æœåŠ¡çš„é—¨åº—';
 					}
 				}
 				if(jdCertState == '1'){
-					jdCert = "¾©¶«ÈÏÖ¤";
-					jdCertStr = "¾©¶«ÓÃ»§µ½µêÏíÊÜÓÅÏÈ·şÎñ";
+					jdCert = "äº¬ä¸œè®¤è¯";
+					jdCertStr = "äº¬ä¸œç”¨æˆ·åˆ°åº—äº«å—ä¼˜å…ˆæœåŠ¡";
 				}
 
 				zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
@@ -893,7 +893,7 @@
 			var val = locInfo[5];
 			myIcon.setImageOffset(new BMap.Size(-(Math.floor(val/10)*20), -(val%10)*30));
 			var newPoint = new BMap.Point(locInfo[1],locInfo[0]);
-			var marker = new BMap.Marker(newPoint,{icon:myIcon});  // ´´½¨±ê×¢
+			var marker = new BMap.Marker(newPoint,{icon:myIcon});  // åˆ›å»ºæ ‡æ³¨
 			var zContent = '<div class="address-tips">';
 			zContent += '       <a href="#none" class="close"></a>';
 			zContent += '       <i class="arrow"></i>';
@@ -901,10 +901,10 @@
 			zContent += '           <dt>' + locInfo[3] + '</dt>';
 			zContent += '           <dd class="address">' + locInfo[4] + '</dd>';
 			if(viewPhone != '') {
-				zContent += '           <dd>¿Í·şµç»°£º' + viewPhone + '</dd>';
+				zContent += '           <dd>å®¢æœç”µè¯ï¼š' + viewPhone + '</dd>';
 			}
 			if(businessTime != '') {
-				zContent += '           <dd>ÓªÒµÊ±¼ä£º' + businessTime + '</dd>';
+				zContent += '           <dd>è¥ä¸šæ—¶é—´ï¼š' + businessTime + '</dd>';
 			}
 			zContent += '           <dd>';
 			zContent += '               <span class="tag1">'+type4s;
@@ -926,14 +926,14 @@
 			zContent += '       </dl>';
 			if(zongheScore != '') {
 				zContent += '       <ul class="score-tips">';
-				zContent += '           <li class="total">×ÛºÏÆÀ·Ö<span>' + zongheScore + '</span></li>';
-				zContent += '           <li>·şÎñÌ¬¶È<span>' + serviceScore + '</span></li>';
-				zContent += '           <li>·şÎñË®Æ½<span>' + levelScore + '</span></li>';
-				zContent += '           <li>ÃÅµê»·¾³<span>' + evnScore + '</span></li>';
+				zContent += '           <li class="total">ç»¼åˆè¯„åˆ†<span>' + zongheScore + '</span></li>';
+				zContent += '           <li>æœåŠ¡æ€åº¦<span>' + serviceScore + '</span></li>';
+				zContent += '           <li>æœåŠ¡æ°´å¹³<span>' + levelScore + '</span></li>';
+				zContent += '           <li>é—¨åº—ç¯å¢ƒ<span>' + evnScore + '</span></li>';
 				zContent += '       </ul>';
 			}
 			zContent += '    </div>';
-			clo2oMap.addOverlay(marker);               // ½«±ê×¢Ìí¼Óµ½µØÍ¼ÖĞ
+			clo2oMap.addOverlay(marker);               // å°†æ ‡æ³¨æ·»åŠ åˆ°åœ°å›¾ä¸­
 			var bigSize = 3;
 			if((locInfo[8] != undefined && locInfo[8][14] && locInfo[8][14] != '') && viewPhone != '' && zongheScore!=''){
 				bigSize = 3;
@@ -949,41 +949,41 @@
 			var optsSet = {};
 			if(bigSize == 3){
 				optsSet = {
-					width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-					height: 277,          // ĞÅÏ¢´°¿Ú¸ß¶È
-					enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+					width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+					height: 277,          // ä¿¡æ¯çª—å£é«˜åº¦
+					enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 				}
 			}else if(bigSize == 2){
 				optsSet = {
-					width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-					height: 205,          // ĞÅÏ¢´°¿Ú¸ß¶È
-					enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+					width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+					height: 205,          // ä¿¡æ¯çª—å£é«˜åº¦
+					enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 				}
 			}else if(bigSize == 1){
 				optsSet = {
-					width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-					height: 167,          // ĞÅÏ¢´°¿Ú¸ß¶È
-					enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+					width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+					height: 167,          // ä¿¡æ¯çª—å£é«˜åº¦
+					enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 				}
 			}else {
 				optsSet = {
-					width : 300,         // ĞÅÏ¢´°¿Ú¿í¶È
-					height: 207,          // ĞÅÏ¢´°¿Ú¸ß¶È
-					enableMessage:true   //ÉèÖÃÔÊĞíĞÅÏ¢´°·¢ËÍ¶ÌÏ¢
+					width : 300,         // ä¿¡æ¯çª—å£å®½åº¦
+					height: 207,          // ä¿¡æ¯çª—å£é«˜åº¦
+					enableMessage:true   //è®¾ç½®å…è®¸ä¿¡æ¯çª—å‘é€çŸ­æ¯
 				}
 			}
-			var infoWindow = new BMap.InfoWindow(zContent,optsSet);  // ´´½¨ĞÅÏ¢´°¿Ú¶ÔÏó
-			clo2oMap.openInfoWindow(infoWindow,newPoint); //¿ªÆôĞÅÏ¢´°¿Ú
+			var infoWindow = new BMap.InfoWindow(zContent,optsSet);  // åˆ›å»ºä¿¡æ¯çª—å£å¯¹è±¡
+			clo2oMap.openInfoWindow(infoWindow,newPoint); //å¼€å¯ä¿¡æ¯çª—å£
 			marker.addEventListener("click", function(){
-				clo2oMap.openInfoWindow(infoWindow,newPoint); //¿ªÆôĞÅÏ¢´°¿Ú
+				clo2oMap.openInfoWindow(infoWindow,newPoint); //å¼€å¯ä¿¡æ¯çª—å£
 			});
 		},
-		//³õÊ¼»¯Êı¾İ
+		//åˆå§‹åŒ–æ•°æ®
 		addPointToMap:function (params) {
 			if(params){
 				var coordaddr = [];
-				coordaddr.push(params['lng']);//¾­¶È
-				coordaddr.push(params['lat']);//Î³¶È
+				coordaddr.push(params['lng']);//ç»åº¦
+				coordaddr.push(params['lat']);//çº¬åº¦
 				coordaddr.push(params['locShopId']);
 				coordaddr.push(params['shopName']);
 				coordaddr.push(params['addr']);
@@ -1000,8 +1000,8 @@
 					extend = coordAddrs[i][8];
 				}
 				this.addPointToMap({
-					lng:coordAddrs[i][0],//¾­¶È
-					lat:coordAddrs[i][1],//Î³¶È
+					lng:coordAddrs[i][0],//ç»åº¦
+					lat:coordAddrs[i][1],//çº¬åº¦
 					locShopId:coordAddrs[i][2],//shopid
 					shopName:coordAddrs[i][3],//shopname
 					addr:coordAddrs[i][4],//address
@@ -1011,7 +1011,7 @@
 				});
 			}
 		},
-		//lat Î¬¶È39.916527,lng ¾­¶È116.397128
+		//lat ç»´åº¦39.916527,lng ç»åº¦116.397128
 		tranCoordQQToBd:function (lat,lng){
 			var x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 			var x = lng, y = lat;
@@ -1021,13 +1021,13 @@
 			lat = z * Math.sin(theta) + 0.006;
 			return [lat,lng];
 		},
-		//Çå³ı½çÃæºÍÊı¾İ
+		//æ¸…é™¤ç•Œé¢å’Œæ•°æ®
 		cleanAllMap:function () {
 			this.coordsAddrArray = [];
 			clo2oMap.clearOverlays();
 		}
 	}
-	//ÁĞ±íÂß¼­
+	//åˆ—è¡¨é€»è¾‘
 	var locShopList = {
 		modifyFlag:false,
 		backFlag:false,
@@ -1048,7 +1048,7 @@
 			addrCodeLv3: null
 		},
 		currentPageData:[],
-		//µ±Ç°Ò³Êı¾İ×¼±¸
+		//å½“å‰é¡µæ•°æ®å‡†å¤‡
 		currentPageList:function (){
 			var pageCursor = (page.currentPage-1)*page.pageSize;
 			this.currentPageData = [];
@@ -1064,21 +1064,21 @@
 				}
 			}
 		},
-		//´ò¿ª²ã³õÊ¼»¯ÁĞ±í£¬1.³õÊ¼»¯ÁĞ±í£¬2.³õÊ¼»¯µØÍ¼£¬3.³õÊ¼»¯µØÖ·
+		//æ‰“å¼€å±‚åˆå§‹åŒ–åˆ—è¡¨ï¼Œ1.åˆå§‹åŒ–åˆ—è¡¨ï¼Œ2.åˆå§‹åŒ–åœ°å›¾ï¼Œ3.åˆå§‹åŒ–åœ°å€
 		initList:function (provinceId) {
 			$(".btn-confirm").addClass('disabled');
-			$("#buyBtnA").html("ÇëÑ¡ÔñÃÅµê");
+			$("#buyBtnA").html("è¯·é€‰æ‹©é—¨åº—");
 			$('#buyBtnA').data("state","no");
-			//Ê×´ÎµØÖ·
+			//é¦–æ¬¡åœ°å€
 			var areaArr;
 			if(provinceId != null) {
 				locShopList.localObj.addrCodeLv1 = provinceId
 			}else {
 				locShopList.localObj.addrCodeLv1 = 1
 			}
-			//×¼±¸µ±Ç°Ò³Êı¾İ
+			//å‡†å¤‡å½“å‰é¡µæ•°æ®
 			this.currentPageList();
-			//³õÊ¼»¯µØÍ¼
+			//åˆå§‹åŒ–åœ°å›¾
 			mapControl.cleanAllMap();
 			mapControl.initMapList(this.currentPageData);
 			mapControl.initMap();
@@ -1086,12 +1086,12 @@
 				$("#rightContext").html(this.listView());
 			}else{
 				var listLocShopHtml = '<div class="address-list"><div class="list-inner">';
-				listLocShopHtml += 'µ±Ç°µØÇøÎŞ·¨¹ºÂò£¬¿ÉÒÔÑ¡ÔñÆäËûµØÇø£¡</div></div>';
+				listLocShopHtml += 'å½“å‰åœ°åŒºæ— æ³•è´­ä¹°ï¼Œå¯ä»¥é€‰æ‹©å…¶ä»–åœ°åŒºï¼</div></div>';
 				listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
 				$("#rightContext").html(listLocShopHtml);
 			}
 			page.pageView();
-			//³õÊ¼»¯µ±Ç°µêÊı
+			//åˆå§‹åŒ–å½“å‰åº—æ•°
 			$("#storeCount").html(page.recordCount);
 		},
 		showPriceRange:function (sku) {
@@ -1123,7 +1123,7 @@
 					console.log(data);
 					if(data){
 						if(data.length==1){
-							var priceHtml = '<span>£¤</span>'+data[0].p;
+							var priceHtml = '<span>ï¿¥</span>'+data[0].p;
 							$("#itemPrice"+sku).html(priceHtml);
 						}
 						var max = 0;
@@ -1141,23 +1141,23 @@
 							}
 						}
 						if(max == min){
-							var priceHtml = '<span>£¤</span>'+max;
+							var priceHtml = '<span>ï¿¥</span>'+max;
 							$("#itemPrice"+sku).html(priceHtml);
 						}else {
 							var price = min + "-" + max;
-							var priceHtml = '<span>£¤</span>'+price;
+							var priceHtml = '<span>ï¿¥</span>'+price;
 							$("#itemPrice"+sku).html(priceHtml);
 						}
 					}
 				}
 			});
 		},
-		//µØÖ·Ñ¡Ôñ¸üĞÂÁĞ±í£¬1.¸üĞÂÁĞ±í£¬2.¸üĞÂµØÍ¼
+		//åœ°å€é€‰æ‹©æ›´æ–°åˆ—è¡¨ï¼Œ1.æ›´æ–°åˆ—è¡¨ï¼Œ2.æ›´æ–°åœ°å›¾
 		updateList:function (provinceId,cityId,countyId) {
 			$(".btn-confirm").addClass('disabled');
-			$("#buyBtnA").html("ÇëÑ¡ÔñÃÅµê");
+			$("#buyBtnA").html("è¯·é€‰æ‹©é—¨åº—");
 			$('#buyBtnA').data("state","no");
-			//µ÷ÓÃ·şÎñc.3.cn
+			//è°ƒç”¨æœåŠ¡c.3.cn
 			$.ajax({
 				url: '//c.3.cn/store/extend?venderId=' + pageConfig.venderId + '&storeGroupId=' + pageConfig.storeGroupId + '&provinceId=' + provinceId + '&cityId=' + cityId + '&countryId=' + countyId,
 				type: 'GET',
@@ -1175,7 +1175,7 @@
 							num = num + 1;
 							var coordaddr = [];
 							var coors = data[i].coordinate;
-							//¾­Î³¶È´¦Àí
+							//ç»çº¬åº¦å¤„ç†
 							if(coors && coors!=""){
 								var corad = coors.split(",");
 								var temCoor = [];
@@ -1193,49 +1193,49 @@
 							}
 							coordaddr.push(data[i].id);
 							coordaddr.push(data[i].name);
-							coordaddr.push("µØÖ·£º"+data[i].fullAddress);
+							coordaddr.push("åœ°å€ï¼š"+data[i].fullAddress);
 							coordaddr.push(i+1);
 							coordaddr.push(data[i].addressId);
 							coordaddr.push(data[i].phone ? data[i].phone : '');
-							//extendÀ©Õ¹
+							//extendæ‰©å±•
 							var extend = [];
 							if (!jsUtil.isEmptyObj(data[i].extend)) {
-								extend.push(data[i].extend.storeStatus ? data[i].extend.storeStatus+'' : "");//0 storeStatus  ÃÅµê×´Ì¬£¨1,ĞèÔ¤Ô¼;2,ÃâÔ¤Ô¼£©
-								extend.push(data[i].extend.deliveryToStore ? data[i].extend.deliveryToStore+'' : "");//1 deliveryToStore  ÊÇ·ñÖ§³Ö·¢»õµ½µê 1,ÊÇ£»2,·ñ
-								extend.push(data[i].extend.storeLeader ? data[i].extend.storeLeader+'' : "");//2 storeLeader  ÃÅµê¸ºÔğÈËĞÕÃû
-								extend.push(data[i].extend.storeLeaderPreNo ? data[i].extend.storeLeaderPreNo+'' : "");//3 storeLeaderPreNo  ÃÅµê¸ºÔğÈËÉí·İÖ¤ºÅ
-								extend.push(data[i].extend.businessBeginTime ? data[i].extend.businessBeginTime+'' : "");//4 businessBeginTime  ÓªÒµ¿ªÊ¼Ê±¼ä
-								extend.push(data[i].extend.businessEndTime ? data[i].extend.businessEndTime+'' : "");//5 businessEndTime   ÓªÒµ½áÊøÊ±¼ä
-								extend.push(data[i].extend.pauseBeginTime ? data[i].extend.pauseBeginTime+'' : "");//6 pauseBeginTime  ÔİÍ£¿ªÊ¼ÈÕÆÚ
-								extend.push(data[i].extend.pauseEndTime ? data[i].extend.pauseEndTime+'' : "");//7 pauseEndTime   ÔİÍ£½áÊøÈÕÆÚ
-								extend.push(data[i].extend.customer_service_land_line ? data[i].extend.customer_service_land_line+'' : "");//8 customer_service_land_line  ¿Í·ş×ù»ú
-								extend.push(data[i].extend.storePhone ? data[i].extend.storePhone+'' : "");//9 storePhone  ¿Í·ş400µç»°
-								extend.push(data[i].extend.business_license ? data[i].extend.business_license+'' : "");//10 business_license  ÓªÒµÖ´ÕÕºÅ
+								extend.push(data[i].extend.storeStatus ? data[i].extend.storeStatus+'' : "");//0 storeStatus  é—¨åº—çŠ¶æ€ï¼ˆ1,éœ€é¢„çº¦;2,å…é¢„çº¦ï¼‰
+								extend.push(data[i].extend.deliveryToStore ? data[i].extend.deliveryToStore+'' : "");//1 deliveryToStore  æ˜¯å¦æ”¯æŒå‘è´§åˆ°åº— 1,æ˜¯ï¼›2,å¦
+								extend.push(data[i].extend.storeLeader ? data[i].extend.storeLeader+'' : "");//2 storeLeader  é—¨åº—è´Ÿè´£äººå§“å
+								extend.push(data[i].extend.storeLeaderPreNo ? data[i].extend.storeLeaderPreNo+'' : "");//3 storeLeaderPreNo  é—¨åº—è´Ÿè´£äººèº«ä»½è¯å·
+								extend.push(data[i].extend.businessBeginTime ? data[i].extend.businessBeginTime+'' : "");//4 businessBeginTime  è¥ä¸šå¼€å§‹æ—¶é—´
+								extend.push(data[i].extend.businessEndTime ? data[i].extend.businessEndTime+'' : "");//5 businessEndTime   è¥ä¸šç»“æŸæ—¶é—´
+								extend.push(data[i].extend.pauseBeginTime ? data[i].extend.pauseBeginTime+'' : "");//6 pauseBeginTime  æš‚åœå¼€å§‹æ—¥æœŸ
+								extend.push(data[i].extend.pauseEndTime ? data[i].extend.pauseEndTime+'' : "");//7 pauseEndTime   æš‚åœç»“æŸæ—¥æœŸ
+								extend.push(data[i].extend.customer_service_land_line ? data[i].extend.customer_service_land_line+'' : "");//8 customer_service_land_line  å®¢æœåº§æœº
+								extend.push(data[i].extend.storePhone ? data[i].extend.storePhone+'' : "");//9 storePhone  å®¢æœ400ç”µè¯
+								extend.push(data[i].extend.business_license ? data[i].extend.business_license+'' : "");//10 business_license  è¥ä¸šæ‰§ç…§å·
 
-								extend.push(data[i].extend.unified_credit_agency_code ? data[i].extend.unified_credit_agency_code+'' : "");//11 unified_credit_agency_code Í³Ò»ĞÅÓÃ»ú¹¹´úÂë
-								extend.push(data[i].extend.store_type ? data[i].extend.store_type+'' : "");//12 store_type  ÃÅµêÀàĞÍ£¨1,4sµê£»2£¬Î¬ĞŞµê£»3£¬ÃÀÈİµê£©
-								extend.push(data[i].extend.is_jd_certification ? data[i].extend.is_jd_certification+'' : "");//13 is_jd_certification  ÊÇ·ñ¾©¶«ÈÏÖ¤£¨1£¬ÊÇ£»0£¬·ñ£©
+								extend.push(data[i].extend.unified_credit_agency_code ? data[i].extend.unified_credit_agency_code+'' : "");//11 unified_credit_agency_code ç»Ÿä¸€ä¿¡ç”¨æœºæ„ä»£ç 
+								extend.push(data[i].extend.store_type ? data[i].extend.store_type+'' : "");//12 store_type  é—¨åº—ç±»å‹ï¼ˆ1,4såº—ï¼›2ï¼Œç»´ä¿®åº—ï¼›3ï¼Œç¾å®¹åº—ï¼‰
+								extend.push(data[i].extend.is_jd_certification ? data[i].extend.is_jd_certification+'' : "");//13 is_jd_certification  æ˜¯å¦äº¬ä¸œè®¤è¯ï¼ˆ1ï¼Œæ˜¯ï¼›0ï¼Œå¦ï¼‰
 
 								var mdImg = data[i].extend.mendian_img ? data[i].extend.mendian_img+'' : "";
 								if(mdImg && mdImg!=''){
 									mdImg = jsUtil.getImageDomain(pageConfig.skuId) + 'n0/s70x70_' + mdImg;
 								}
-								extend.push(mdImg);//14 mendian_img  ÃÅµêÕÕÆ¬
-								extend.push(data[i].extend.zonghe_score ? data[i].extend.zonghe_score+'' : "");//15 zonghe_score  ×ÛºÏÆÀ·Ö
-								extend.push(data[i].extend.service_score ? data[i].extend.service_score+'' : "");//16 service_score  ·şÎñÌ¬¶ÈÆÀ·Ö
-								extend.push(data[i].extend.service_level_score ? data[i].extend.service_level_score+'' : "");//17 service_level_score  ·şÎñË®Æ½ÆÀ·Ö
-								extend.push(data[i].extend.mendian_evn_score ? data[i].extend.mendian_evn_score+'' : "");//18 mendian_evn_score  ÃÅµê»·¾³ÆÀ·Ö
-								extend.push(data[i].extend.commentTime ? data[i].extend.commentTime+'' : "");//19 commentTime  ÆÀ·Ö´ÎÊı
+								extend.push(mdImg);//14 mendian_img  é—¨åº—ç…§ç‰‡
+								extend.push(data[i].extend.zonghe_score ? data[i].extend.zonghe_score+'' : "");//15 zonghe_score  ç»¼åˆè¯„åˆ†
+								extend.push(data[i].extend.service_score ? data[i].extend.service_score+'' : "");//16 service_score  æœåŠ¡æ€åº¦è¯„åˆ†
+								extend.push(data[i].extend.service_level_score ? data[i].extend.service_level_score+'' : "");//17 service_level_score  æœåŠ¡æ°´å¹³è¯„åˆ†
+								extend.push(data[i].extend.mendian_evn_score ? data[i].extend.mendian_evn_score+'' : "");//18 mendian_evn_score  é—¨åº—ç¯å¢ƒè¯„åˆ†
+								extend.push(data[i].extend.commentTime ? data[i].extend.commentTime+'' : "");//19 commentTime  è¯„åˆ†æ¬¡æ•°
 								coordaddr.push(extend);
 								coordaddr.push(data[i].suspendState);
 							}
 							//coordaddr.push(num);
 							coordsAddrs.push(coordaddr);
 						}
-						//×¼±¸µ±Ç°Ò³Êı¾İ
+						//å‡†å¤‡å½“å‰é¡µæ•°æ®
 						page.init(data.length);
 						locShopList.currentPageList();
-						//³õÊ¼»¯µØÍ¼
+						//åˆå§‹åŒ–åœ°å›¾
 						mapControl.cleanAllMap();
 						mapControl.initMapList(locShopList.currentPageData);
 						mapControl.initMap();
@@ -1246,17 +1246,17 @@
 						$("#storeCount").html(data.length);
 					}else{
 						coordsAddrs = [];
-						//×¼±¸µ±Ç°Ò³Êı¾İ
+						//å‡†å¤‡å½“å‰é¡µæ•°æ®
 						page.init(0);
 						locShopList.currentPageData = [];
-						//³õÊ¼»¯µØÍ¼
+						//åˆå§‹åŒ–åœ°å›¾
 						mapControl.cleanAllMap();
 						mapControl.initMapList(locShopList.currentPageData);
 						mapControl.initMap();
 						//
 						$("#area1").show();
 						var listLocShopHtml = '<div class="address-list">';
-						listLocShopHtml += 'µ±Ç°µØÇøÎŞ·¨¹ºÂò£¬¿ÉÒÔÑ¡ÔñÆäËûµØÇø£¡</div>';
+						listLocShopHtml += 'å½“å‰åœ°åŒºæ— æ³•è´­ä¹°ï¼Œå¯ä»¥é€‰æ‹©å…¶ä»–åœ°åŒºï¼</div>';
 						listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
 						$("#rightContext").html(listLocShopHtml);
 						page.pageView();
@@ -1269,7 +1269,7 @@
 						if($("#"+shopId).length > 0){
 							$("#"+shopId).addClass("current");
 							$(".btn-confirm").removeClass('disabled')
-							$("#buyBtnA").html("È·¶¨Ñ¡Ôñ´ËÃÅµê");
+							$("#buyBtnA").html("ç¡®å®šé€‰æ‹©æ­¤é—¨åº—");
 							$('#buyBtnA').data("state","yes");
 							for(var i=0;i<coordsAddrs.length;i++){
 								if(shopId == coordsAddrs[i][2]){
@@ -1282,15 +1282,15 @@
 				}
 			});
 		},
-		//Ñ¡Ôñ³§¼Ò·şÎñ£¬1.µØÍ¼ÏÔÊ¾³§¼ÒÎ»ÖÃ£¬2.ÁĞ±íÇĞ»»ÏêÇé
+		//é€‰æ‹©å‚å®¶æœåŠ¡ï¼Œ1.åœ°å›¾æ˜¾ç¤ºå‚å®¶ä½ç½®ï¼Œ2.åˆ—è¡¨åˆ‡æ¢è¯¦æƒ…
 		selectLocShop:function (params) {
-			//µØÍ¼ÏÔÊ¾³§¼ÒÎ»ÖÃ£¬lng,lat,locshopid,addr,serialNo
+			//åœ°å›¾æ˜¾ç¤ºå‚å®¶ä½ç½®ï¼Œlng,lat,locshopid,addr,serialNo
 			//var coordaddr = [];
-			//¸Ä±äÁĞ±íÑ¡ÔñÑùÊ½
+			//æ”¹å˜åˆ—è¡¨é€‰æ‹©æ ·å¼
 			$(".list-inner").children(".address-item").removeClass("current");
 			$("#"+params).addClass("current");
 			$(".btn-confirm").removeClass('disabled')
-			$("#buyBtnA").html("È·¶¨Ñ¡Ôñ´ËÃÅµê");
+			$("#buyBtnA").html("ç¡®å®šé€‰æ‹©æ­¤é—¨åº—");
 			$('#buyBtnA').data("state","yes");
 			//
 			for(var i=0;i<coordsAddrs.length;i++){
@@ -1310,7 +1310,7 @@
 			var coordaddr = [];
 			for(var i=0;i<coordsAddrs.length;i++){
 				if(locId == coordsAddrs[i][2]){
-					//0-7µÄº¬Òålng,lat,shopid,shopname,addr,serialNo,skuid,addrcode
+					//0-7çš„å«ä¹‰lng,lat,shopid,shopname,addr,serialNo,skuid,addrcode
 					coordaddr.push(coordsAddrs[i][0])
 					coordaddr.push(coordsAddrs[i][1]);
 					coordaddr.push(coordsAddrs[i][2]);
@@ -1321,26 +1321,26 @@
 					coordaddr.push(coordsAddrs[i][7]);
 					if (coordsAddrs[i][8] && coordsAddrs[i][8].length > 0){
 						var extend = [];
-						extend.push(coordsAddrs[i][8][0]);//storeStatus  ÃÅµê×´Ì¬£¨1,ĞèÔ¤Ô¼;2,ÃâÔ¤Ô¼£©
-						extend.push(coordsAddrs[i][8][1]);//deliveryToStore  ÊÇ·ñÖ§³Ö·¢»õµ½µê 1,ÊÇ£»2,·ñ
-						extend.push(coordsAddrs[i][8][2]);//storeLeader  ÃÅµê¸ºÔğÈËĞÕÃû
-						extend.push(coordsAddrs[i][8][3]);//storeLeaderPreNo  ÃÅµê¸ºÔğÈËÉí·İÖ¤ºÅ
-						extend.push(coordsAddrs[i][8][4]);//businessBeginTime  ÓªÒµ¿ªÊ¼Ê±¼ä
-						extend.push(coordsAddrs[i][8][5]);//businessEndTime   ÓªÒµ½áÊøÊ±¼ä
-						extend.push(coordsAddrs[i][8][6]);//pauseBeginTime  ÔİÍ£¿ªÊ¼ÈÕÆÚ
-						extend.push(coordsAddrs[i][8][7]);//pauseEndTime   ÔİÍ£½áÊøÈÕÆÚ
-						extend.push(coordsAddrs[i][8][8]);//customer_service_land_line  ¿Í·ş×ù»ú
-						extend.push(coordsAddrs[i][8][9]);//storePhone  ¿Í·ş400µç»°
-						extend.push(coordsAddrs[i][8][10]);//business_license  ÓªÒµÖ´ÕÕºÅ
-						extend.push(coordsAddrs[i][8][11]);//11 unified_credit_agency_code Í³Ò»ĞÅÓÃ»ú¹¹´úÂë
-						extend.push(coordsAddrs[i][8][12]);//12 store_type  ÃÅµêÀàĞÍ£¨1,4sµê£»2£¬Î¬ĞŞµê£»3£¬ÃÀÈİµê£©
-						extend.push(coordsAddrs[i][8][13]);//13 is_jd_certification  ÊÇ·ñ¾©¶«ÈÏÖ¤£¨1£¬ÊÇ£»0£¬·ñ£©
-						extend.push(coordsAddrs[i][8][14]);//14 mendian_img  ÃÅµêÕÕÆ¬
-						extend.push(coordsAddrs[i][8][15]);//15 zonghe_score  ×ÛºÏÆÀ·Ö
-						extend.push(coordsAddrs[i][8][16]);//16 service_score  ·şÎñÌ¬¶ÈÆÀ·Ö
-						extend.push(coordsAddrs[i][8][17]);//17 service_level_score  ·şÎñË®Æ½ÆÀ·Ö
-						extend.push(coordsAddrs[i][8][18]);//18 mendian_evn_score  ÃÅµê»·¾³ÆÀ·Ö
-						extend.push(coordsAddrs[i][8][19]);//19 commentTime  ÆÀ·Ö´ÎÊı
+						extend.push(coordsAddrs[i][8][0]);//storeStatus  é—¨åº—çŠ¶æ€ï¼ˆ1,éœ€é¢„çº¦;2,å…é¢„çº¦ï¼‰
+						extend.push(coordsAddrs[i][8][1]);//deliveryToStore  æ˜¯å¦æ”¯æŒå‘è´§åˆ°åº— 1,æ˜¯ï¼›2,å¦
+						extend.push(coordsAddrs[i][8][2]);//storeLeader  é—¨åº—è´Ÿè´£äººå§“å
+						extend.push(coordsAddrs[i][8][3]);//storeLeaderPreNo  é—¨åº—è´Ÿè´£äººèº«ä»½è¯å·
+						extend.push(coordsAddrs[i][8][4]);//businessBeginTime  è¥ä¸šå¼€å§‹æ—¶é—´
+						extend.push(coordsAddrs[i][8][5]);//businessEndTime   è¥ä¸šç»“æŸæ—¶é—´
+						extend.push(coordsAddrs[i][8][6]);//pauseBeginTime  æš‚åœå¼€å§‹æ—¥æœŸ
+						extend.push(coordsAddrs[i][8][7]);//pauseEndTime   æš‚åœç»“æŸæ—¥æœŸ
+						extend.push(coordsAddrs[i][8][8]);//customer_service_land_line  å®¢æœåº§æœº
+						extend.push(coordsAddrs[i][8][9]);//storePhone  å®¢æœ400ç”µè¯
+						extend.push(coordsAddrs[i][8][10]);//business_license  è¥ä¸šæ‰§ç…§å·
+						extend.push(coordsAddrs[i][8][11]);//11 unified_credit_agency_code ç»Ÿä¸€ä¿¡ç”¨æœºæ„ä»£ç 
+						extend.push(coordsAddrs[i][8][12]);//12 store_type  é—¨åº—ç±»å‹ï¼ˆ1,4såº—ï¼›2ï¼Œç»´ä¿®åº—ï¼›3ï¼Œç¾å®¹åº—ï¼‰
+						extend.push(coordsAddrs[i][8][13]);//13 is_jd_certification  æ˜¯å¦äº¬ä¸œè®¤è¯ï¼ˆ1ï¼Œæ˜¯ï¼›0ï¼Œå¦ï¼‰
+						extend.push(coordsAddrs[i][8][14]);//14 mendian_img  é—¨åº—ç…§ç‰‡
+						extend.push(coordsAddrs[i][8][15]);//15 zonghe_score  ç»¼åˆè¯„åˆ†
+						extend.push(coordsAddrs[i][8][16]);//16 service_score  æœåŠ¡æ€åº¦è¯„åˆ†
+						extend.push(coordsAddrs[i][8][17]);//17 service_level_score  æœåŠ¡æ°´å¹³è¯„åˆ†
+						extend.push(coordsAddrs[i][8][18]);//18 mendian_evn_score  é—¨åº—ç¯å¢ƒè¯„åˆ†
+						extend.push(coordsAddrs[i][8][19]);//19 commentTime  è¯„åˆ†æ¬¡æ•°
 						coordaddr.push(extend);
 						coordaddr.push(coordsAddrs[i][9]);
 					}
@@ -1383,25 +1383,25 @@
 					var suspendState = this.currentPageData[i][9];
 
 					if(suspendState == '1'){
-						suspend = 'ÔİÍ£ÓªÒµ';
-						suspendStr = 'ÔİÍ£ÆÚÄÚÔİ²»½Óµ¥£¬½áÊøºó»Ö¸´ÓªÒµ';
+						suspend = 'æš‚åœè¥ä¸š';
+						suspendStr = 'æš‚åœæœŸå†…æš‚ä¸æ¥å•ï¼Œç»“æŸåæ¢å¤è¥ä¸š';
 					}
 
 					if(type4sState != ''){
 						if(type4sState == '1'){
-							type4s = '4sµê';
-							type4sStr = 'Ö÷»ú³§¼ÒÊÚÈ¨µÄ4SÃÅµê';
+							type4s = '4såº—';
+							type4sStr = 'ä¸»æœºå‚å®¶æˆæƒçš„4Sé—¨åº—';
 						}else if(type4sState == '2'){
-							type4s = 'Î¬ĞŞµê';
-							type4sStr = '¾ßÓĞĞĞÒµÎ¬ĞŞ×ÊÖÊµÄÃÅµê/Î¬ĞŞ³§';
+							type4s = 'ç»´ä¿®åº—';
+							type4sStr = 'å…·æœ‰è¡Œä¸šç»´ä¿®èµ„è´¨çš„é—¨åº—/ç»´ä¿®å‚';
 						}else if(type4sState == '3'){
-							type4s = 'ÃÀÈİµê';
-							type4sStr = '¾­ÓªÏ´³µ¡¢ÃÀÈİ¡¢ÌùÄ¤Ïà¹Ø·şÎñµÄÃÅµê';
+							type4s = 'ç¾å®¹åº—';
+							type4sStr = 'ç»è¥æ´—è½¦ã€ç¾å®¹ã€è´´è†œç›¸å…³æœåŠ¡çš„é—¨åº—';
 						}
 					}
 					if(jdCertState == '1'){
-						jdCert = "¾©¶«ÈÏÖ¤";
-						jdCertStr = "¾©¶«ÓÃ»§µ½µêÏíÊÜÓÅÏÈ·şÎñ";
+						jdCert = "äº¬ä¸œè®¤è¯";
+						jdCertStr = "äº¬ä¸œç”¨æˆ·åˆ°åº—äº«å—ä¼˜å…ˆæœåŠ¡";
 					}
 
 					zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
@@ -1428,17 +1428,17 @@
 				listLocShopHtml += '                   <dd class="address">';
 				listLocShopHtml += this.currentPageData[i][4];
 				listLocShopHtml += '                   </dd>';
-				listLocShopHtml += '                   <dd>';//¼Û¸ñ£º
+				listLocShopHtml += '                   <dd>';//ä»·æ ¼ï¼š
 				listLocShopHtml += '                       <span class="price" id="itemPrice'+this.currentPageData[i][6]+'"></span>';
 				if(zongheScore != '') {
-					listLocShopHtml += '                       <span class="score">ÆÀ·Ö' + zongheScore;
+					listLocShopHtml += '                       <span class="score">è¯„åˆ†' + zongheScore;
 					listLocShopHtml += '                           <div class="tips">';
 					listLocShopHtml += '                               <i class="arrow"></i>';
 					listLocShopHtml += '                               <ul>';
-					listLocShopHtml += '                                   <li class="total">×ÛºÏÆÀ·Ö<span>' + zongheScore + '</span></li>';
-					listLocShopHtml += '                                   <li>·şÎñÌ¬¶È<span>' + serviceScore + '</span></li>';
-					listLocShopHtml += '                                   <li>·şÎñË®Æ½<span>' + levelScore + '</span></li>';
-					listLocShopHtml += '                                   <li>ÃÅµê»·¾³<span>' + evnScore + '</span></li>';
+					listLocShopHtml += '                                   <li class="total">ç»¼åˆè¯„åˆ†<span>' + zongheScore + '</span></li>';
+					listLocShopHtml += '                                   <li>æœåŠ¡æ€åº¦<span>' + serviceScore + '</span></li>';
+					listLocShopHtml += '                                   <li>æœåŠ¡æ°´å¹³<span>' + levelScore + '</span></li>';
+					listLocShopHtml += '                                   <li>é—¨åº—ç¯å¢ƒ<span>' + evnScore + '</span></li>';
 					listLocShopHtml += '                               </ul>';
 					listLocShopHtml += '                           </div>';
 					listLocShopHtml += '                       </span>';
@@ -1469,7 +1469,7 @@
 		},
 		okSelectLocShop:function () {
 			//var locShopId = params[0];
-			//Ìî³ä¸¸Ò³Ãæ
+			//å¡«å……çˆ¶é¡µé¢
 			var state = $('#buyBtnA').data("state");
 			if(state && state == "no"){
 				return;
@@ -1477,23 +1477,23 @@
 			if(window.parent){
 				var selListEle = $(".list-inner").children(".current");
 				if(selListEle && selListEle.length > 0){
-					var sid = locShopList.serviceObj.shopId;//ÃÅµêID
-					var sname = locShopList.serviceObj.shopName;//ÃÅµêID
-					var provId = locShopList.serviceObj.provId;//ÃÅµêID
-					var cityId = locShopList.serviceObj.cityId;//ÃÅµêID
-					var countyId = locShopList.serviceObj.countyId;//ÃÅµêID
+					var sid = locShopList.serviceObj.shopId;//é—¨åº—ID
+					var sname = locShopList.serviceObj.shopName;//é—¨åº—ID
+					var provId = locShopList.serviceObj.provId;//é—¨åº—ID
+					var cityId = locShopList.serviceObj.cityId;//é—¨åº—ID
+					var countyId = locShopList.serviceObj.countyId;//é—¨åº—ID
 //					window.parent.pageConfig.product.chooseLOCShop.setResult(sid,sname,provId,cityId,countyId);
-					$('#body_', window.parent.document).append('¹ş¹ş¹ş¹ş¹ş»ò');
+					$('#body_', window.parent.document).append('å“ˆå“ˆå“ˆå“ˆå“ˆæˆ–');
 				}
-				//¹Ø±Õ²ã
+				//å…³é—­å±‚
 				window.parent.$.closeDialog();
 			}else{
-				alert("Ñ¡ÔñÓĞÎó£¡ÇëÖØĞÂÑ¡Ôñ£¡");
+				alert("é€‰æ‹©æœ‰è¯¯ï¼è¯·é‡æ–°é€‰æ‹©ï¼");
 			}
 		},
-		//·­Ò³
+		//ç¿»é¡µ
 		prevPage:function () {
-			//³õÊ¼»¯µØÍ¼
+			//åˆå§‹åŒ–åœ°å›¾
 			mapControl.cleanAllMap();
 			mapControl.initMapList(this.currentPageData);
 			mapControl.initMap();
@@ -1502,7 +1502,7 @@
 			page.pageView();
 		},
 		nextPage:function () {
-			//³õÊ¼»¯µØÍ¼
+			//åˆå§‹åŒ–åœ°å›¾
 			mapControl.cleanAllMap();
 			mapControl.initMapList(this.currentPageData);
 			mapControl.initMap();
@@ -1513,11 +1513,11 @@
 	};
 	jsUtil = {
 		getUrlParam: function (name) {
-			//¹¹ÔìÒ»¸öº¬ÓĞÄ¿±ê²ÎÊıµÄÕıÔò±í´ïÊ½¶ÔÏó
+			//æ„é€ ä¸€ä¸ªå«æœ‰ç›®æ ‡å‚æ•°çš„æ­£åˆ™è¡¨è¾¾å¼å¯¹è±¡
 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-			//Æ¥ÅäÄ¿±ê²ÎÊı
+			//åŒ¹é…ç›®æ ‡å‚æ•°
 			var r = window.location.search.substr(1).match(reg);
-			//·µ»Ø²ÎÊıÖµ
+			//è¿”å›å‚æ•°å€¼
 			if (r != null) return unescape(r[2]);
 			return null;
 		},
@@ -1540,7 +1540,7 @@
 <script>
 	var storeGroupId = jsUtil.getUrlParam("storeGroupId");
 	console.log(storeGroupId);
-	//»ñÈ¡Ê¡·İÏÂÀ­Êı¾İ
+	//è·å–çœä»½ä¸‹æ‹‰æ•°æ®
 	$(document).ready(function(){
 
 		$.ajax({
@@ -1553,7 +1553,7 @@
 				console.log(data);
 				if(data) {
 					var provinceSel = $("#provinceSel");
-					provinceSel.append("<option value=''>ËùÓĞÊ¡»á</option>");
+					provinceSel.append("<option value=''>æ‰€æœ‰çœä¼š</option>");
 					//var flag = 0;
 					var pnam = decodeURIComponent(jsUtil.getUrlParam('pName'));
 					var mFlag = jsUtil.getUrlParam("modifyFlag");
@@ -1596,17 +1596,17 @@
 							$("#storeCount").html(0);
 							$("strong").html(unescape('%u5317%u4EAC'));
 							var listLocShopHtml = '<div class="address-list">';
-							listLocShopHtml += 'µ±Ç°µØÇøÎŞ·¨¹ºÂò£¬¿ÉÒÔÑ¡ÔñÆäËûµØÇø£¡</div>';
+							listLocShopHtml += 'å½“å‰åœ°åŒºæ— æ³•è´­ä¹°ï¼Œå¯ä»¥é€‰æ‹©å…¶ä»–åœ°åŒºï¼</div>';
 							listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
 							$("#rightContext").html(listLocShopHtml);
 							//
 							$(".btn-confirm").addClass('disabled');
-							$("#buyBtnA").html("ÇëÑ¡ÔñÃÅµê");
+							$("#buyBtnA").html("è¯·é€‰æ‹©é—¨åº—");
 							$('#buyBtnA').data("state","no");
 						}
 					})
 					if (!citySel.find('option[value=""]').length) {
-						citySel.append("<option value=''>È«²¿ÃÅµê</option>")
+						citySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>")
 					}
 					if(mFlag && mProvinceId){
 						getCity(mProvinceId, false);
@@ -1617,24 +1617,24 @@
 			}
 		});
 
-		//Ñ¡ÔñÊ¡¸Ä±äÊĞ
+		//é€‰æ‹©çœæ”¹å˜å¸‚
 		var provinceSel = $("#provinceSel");
 		provinceSel.change(function(){
 			var val = provinceSel.val();
 			$("#citySel").empty();
 			$("#countySel").empty();
 			var countySel = $("#countySel");
-			countySel.append("<option value=''>È«²¿ÃÅµê</option>");
+			countySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>");
 			if(val != "" && val != null && val != undefined){
 				getCity(val, false);
 			}else{
 				var citySel = $("#citySel");
-				citySel.append("<option value=''>È«²¿ÃÅµê</option>");
+				citySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>");
 				searchStoreInfo();
 			}
 		});
 
-		//Ñ¡ÔñÊĞ¸Ä±äÏØ
+		//é€‰æ‹©å¸‚æ”¹å˜å¿
 		var citySel = $("#citySel");
 		citySel.change(function(){
 			$("#countySel").empty();
@@ -1644,7 +1644,7 @@
 				getCounty(provinceSel.val(),val,false);
 			}else{
 				var countySel = $("#countySel");
-				countySel.append("<option value=''>È«²¿ÃÅµê</option>");
+				countySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>");
 				searchStoreInfo();
 			}
 		});
@@ -1656,7 +1656,7 @@
 
 	});
 
-	//»ñÈ¡¶ş¼¶µØÖ·
+	//è·å–äºŒçº§åœ°å€
 	function getCity(provinceId, firstFlag){
 		$.ajax({
 			url: '//c.3.cn/store/address?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId,
@@ -1672,7 +1672,7 @@
 				var mCityId = jsUtil.getUrlParam("cid");
 				var citySel = $("#citySel");
 				if (!citySel.find('option[value=""]').length) {
-					citySel.append("<option value=''>È«²¿ÃÅµê</option>");
+					citySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>");
 				}
 				if(data) {
 					$.each(data,function(key,value){
@@ -1693,7 +1693,7 @@
 					searchStoreInfo();
 				}else {
 					var listLocShopHtml = '<div class="address-list">';
-					listLocShopHtml += 'µ±Ç°µØÇøÎŞ·¨¹ºÂò£¬¿ÉÒÔÑ¡ÔñÆäËûµØÇø£¡</div>';
+					listLocShopHtml += 'å½“å‰åœ°åŒºæ— æ³•è´­ä¹°ï¼Œå¯ä»¥é€‰æ‹©å…¶ä»–åœ°åŒºï¼</div>';
 					listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
 					$("#rightContext").html(listLocShopHtml);
 				}
@@ -1702,7 +1702,7 @@
 	}
 
 
-	//»ñÈ¡Èı¼¶µØÖ·
+	//è·å–ä¸‰çº§åœ°å€
 	function getCounty(provinceId,cityId,firstFlag) {
 		$.ajax({
 			url: '//c.3.cn/store/address?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId + '&cityId=' + cityId,
@@ -1718,7 +1718,7 @@
 
 				var countySel = $("#countySel");
 				if (!countySel.find('option[value=""]').length) {
-					countySel.append("<option value=''>È«²¿ÃÅµê</option>");
+					countySel.append("<option value=''>å…¨éƒ¨é—¨åº—</option>");
 				}
 				if(data) {
 					$.each(data,function(key,value){
@@ -1730,9 +1730,9 @@
 		});
 	}
 
-	//ÁĞ±íÈ«¾ÖÊı¾İ
+	//åˆ—è¡¨å…¨å±€æ•°æ®
 	var coordsAddrs = [];
-	//»ñÈ¡ÃÅµêÁĞ±í
+	//è·å–é—¨åº—åˆ—è¡¨
 	function getStoreList(provinceId,cityId,countyId) {
 		$.ajax({
 			url: '//c.3.cn/store/extend?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId + '&cityId=' + cityId + '&countryId=' + countyId,
@@ -1769,7 +1769,7 @@
 						coordaddr.push(temCoor[1]);
 						coordaddr.push(val.id);
 						coordaddr.push(val.name);
-						coordaddr.push("µØÖ·£º"+val.fullAddress);
+						coordaddr.push("åœ°å€ï¼š"+val.fullAddress);
 						coordaddr.push(num);
 						coordsAddrs.push(coordaddr);
 						coordaddr.push(val.phone ? val.phone:'');
@@ -1798,7 +1798,7 @@
 
 <body>
 
-<!--Ä¬ÈÏ-->
+<!--é»˜è®¤-->
 <div class="o2o-layer">
 	<div id="area1" class="ui-area-wrap">
 		<div class="loc-title fl">
@@ -1809,31 +1809,31 @@
 		</div>
 		<div class="clr"></div>
 	</div>
-	<!-- µØÍ¼-->
+	<!-- åœ°å›¾-->
 	<div id="allmap" class="map-wrap">
 	</div>
 	<div class="address-wrap">
 		<div class="select-wrap">
-			ËùÔÚµØ£º<select id="provinceSel" style="width: 75px"></select>
+			æ‰€åœ¨åœ°ï¼š<select id="provinceSel" style="width: 75px"></select>
 			<select id="citySel" style="width: 75px"></select>
-			<select id="countySel" style="width: 75px"><option value="">È«²¿ÃÅµê</option></select>
+			<select id="countySel" style="width: 75px"><option value="">å…¨éƒ¨é—¨åº—</option></select>
 		</div>
-		<!-- ÃÅµêÁĞ±í-->
+		<!-- é—¨åº—åˆ—è¡¨-->
 		<div id="rightContext"></div>
-		<div id="store-prompt"></div>            <!-- ·ÖÒ³-->
+		<div id="store-prompt"></div>            <!-- åˆ†é¡µ-->
 		<div id="pagecontrol" class="pagination"></div>
-		<div id="buyBtn" class="o2o-btn btn-confirm"><a href="#none" onclick="locShopList.okSelectLocShop();" data-state="no" id="buyBtnA" class="btn-confirm">È·¶¨Ñ¡Ôñ´ËÃÅµê</a></div>
+		<div id="buyBtn" class="o2o-btn btn-confirm"><a href="#none" onclick="locShopList.okSelectLocShop();" data-state="no" id="buyBtnA" class="btn-confirm">ç¡®å®šé€‰æ‹©æ­¤é—¨åº—</a></div>
 	</div>
 </div>
 </body>
 
 <script type="text/javascript">
 
-	// °Ù¶ÈµØÍ¼API¹¦ÄÜ-³õÊ¼»¯
-	var clo2oMap = new BMap.Map("allmap");    // ´´½¨MapÊµÀı
-	clo2oMap.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // ³õÊ¼»¯µØÍ¼,ÉèÖÃÖĞĞÄµã×ø±êºÍµØÍ¼¼¶±ğ
-	clo2oMap.addControl(new BMap.MapTypeControl());   //Ìí¼ÓµØÍ¼ÀàĞÍ¿Ø¼ş
-	clo2oMap.setCurrentCity("±±¾©");          // ÉèÖÃµØÍ¼ÏÔÊ¾µÄ³ÇÊĞ ´ËÏîÊÇ±ØĞëÉèÖÃµÄ
+	// ç™¾åº¦åœ°å›¾APIåŠŸèƒ½-åˆå§‹åŒ–
+	var clo2oMap = new BMap.Map("allmap");    // åˆ›å»ºMapå®ä¾‹
+	clo2oMap.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // åˆå§‹åŒ–åœ°å›¾,è®¾ç½®ä¸­å¿ƒç‚¹åæ ‡å’Œåœ°å›¾çº§åˆ«
+	clo2oMap.addControl(new BMap.MapTypeControl());   //æ·»åŠ åœ°å›¾ç±»å‹æ§ä»¶
+	clo2oMap.setCurrentCity("åŒ—äº¬");          // è®¾ç½®åœ°å›¾æ˜¾ç¤ºçš„åŸå¸‚ æ­¤é¡¹æ˜¯å¿…é¡»è®¾ç½®çš„
 	clo2oMap.enableScrollWheelZoom(true);
 
 </script>
