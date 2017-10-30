@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+<link type="text/css" rel="stylesheet"  href="//misc.360buyimg.com/jdf/1.0.0/unit/??ui-base/1.0.0/ui-base.css,shortcut/2.0.0/shortcut.css,global-header/1.0.0/global-header.css,myjd/2.0.0/myjd.css,nav/2.0.0/nav.css,shoppingcart/2.0.0/shoppingcart.css,global-footer/1.0.0/global-footer.css,service/1.0.0/service.css"/>
+<link rel="stylesheet" type="text/css" href="//static.360buyimg.com/item/main/1.0.22/??/widget/common/common.css,/widget/sprite/sprite.css,/widget/main/main.css,/widget/contrast/contrast.css,/widget/combineShare/combineShare.css,/widget/itemInfo/itemInfo.css,/widget/extInfo/extInfo.css,/widget/promiseIcon/promiseIcon.css,/widget/popbox/popbox.css,/widget/popScore/popScore.css,/widget/preview/preview.css,/widget/fitting/fitting.css,/widget/ui-box/ui-box.css,/widget/ui-star/ui-star.css,/widget/ui-tag/ui-tag.css,/widget/detailContent/detailContent.css,/widget/ui-page/ui-page.css,/widget/consult/consult.css,/widget/discuss/discuss.css,/widget/yourFind/yourFind.css" source="widget"/>
+
+<link href="//misc.360buyimg.com/jdf/1.0.0/unit/ui-base/1.0.0/ui-base.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://misc.360buyimg.com/jdf/1.0.0/ui/dialog/1.0.0/dialog.css">
+<script type="text/javascript" src="//misc.360buyimg.com/jdf/lib/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="//misc.360buyimg.com/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=NwyGTIZtK2U72cSpg59XTxCl&s=1"></script>
+<script type="text/javascript">
+	var pageConfig = {
+		storeGroupId : '71901',
+		venderId: '621944',
+		provinceId:1,
+		cityId:72,
+		isNarrow:false
+	};
+	if(pageConfig.isNarrow){
+		$('html').addClass('narrow');
+	}
+</script>
+<style type="text/css">
+	.o2o-layer{
+		width: 874px;
+		padding: 8px;
+	}
+	.o2o-layer .map-wrap{
+		float: left;
+		width: 540px;
+		height: 512px;
+		background: #f2f0ec;
+	}
+	.o2o-layer .map-wrap .address-tips{
+		position: absolute;
+		width: 268px;
+		padding: 10px 15px;
+		border: 1px solid #cecbce;
+		box-shadow: 0 0 10px #dddada;
+		background: #fff;
+	}
+	.o2o-layer .map-wrap .address-tips .close{
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		width: 12px;
+		height: 11px;
+	}
+	.o2o-layer .map-wrap .address-tips .arrow{
+		position: absolute;
+		bottom: -6px;
+		top: auto;
+		left: 50%;
+		width: 10px;
+		height: 6px;
+		margin-left: -5px;
+	}
+	.o2o-layer .map-wrap .address-tips dl{
+		line-height: 150%;
+	}
+	.o2o-layer .map-wrap .address-tips dd{
+		margin-top: 5px;
+	}
+	.o2o-layer .map-wrap .address-tips .address{
+		color: #999;
+	}
+	.o2o-layer .address-tips .pic{
+		position: relative;
+		display: inline-block;
+		margin-right: 5px;
+	}
+	.o2o-layer .address-tips .pic img{
+		width: 50px;
+		height: 50px;
+	}
+	.o2o-layer .address-tips .pic .pic-more{
+		position: absolute;
+		z-index: 2;
+		left: 52px;
+		top: 0;
+	}
+	.o2o-layer .address-tips .pic .pic-more img{
+		width: 300px;
+		height: 300px;
+		border: 3px solid #fff;
+	}
+	.o2o-layer .address-tips .tag1 .tips,
+	.o2o-layer .address-tips .tag2 .tips{
+		display: none;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		line-height: 40px;
+		padding: 0 15px;
+		color: #666;
+		border: 1px solid #cecbce;
+		white-space: nowrap;
+		background: #fff;
+		box-shadow: 0 0 10px #cecbce;
+	}
+	.o2o-layer .address-tips .tag1:hover .tips,
+	.o2o-layer .address-tips .tag2:hover .tips{
+		display: block;
+	}
+
+	.o2o-layer .map-wrap .score-tips{
+		width: 264px;
+		border: 1px solid #f0f0f0;
+		overflow: hidden;
+		zoom: 1;
+		margin-top: 8px;
+	}
+	.o2o-layer .map-wrap .score-tips li{
+		width: 66px;
+		height: 38px;
+		padding-top: 4px;
+		float: left;
+		text-align: center;
+	}
+	.o2o-layer .map-wrap .score-tips span{
+		display: block;
+	}
+	.o2o-layer .map-wrap .score-tips .total{
+		background: #f2f2f2;
+		font-weight: bold;
+		color: #333;
+	}
+	.o2o-layer .map-wrap .score-tips .total span{
+		color: #e4393c;
+	}
+	.o2o-layer .address-wrap .current{
+		background: #f3f3f3;
+	}
+	.o2o-layer .address-wrap{
+		float: right;
+		width: 325px;
+	}
+	.o2o-layer .address-wrap .selected-address{
+		height: 35px;
+		padding-top: 10px;
+		color: #666;
+	}
+	.o2o-layer .address-wrap .selected-address a{
+		float: right;
+		color: #6b75b3;
+	}
+	.o2o-layer .address-wrap .selected-address a:hover{
+		color: #e4393c;
+	}
+	.o2o-layer .address-wrap {
+		float: right;
+		height: 35px;
+		padding-top: 10px;
+	}
+	.select-address {
+		float: right;
+		padding-right: 10px;
+	}
+	.select-address select {
+		width: 80px;
+	}
+	.o2o-layer .address-wrap .select-wrap select{
+		margin-right:5px;
+		height:22px;
+	}
+	.o2o-layer .select-wrap .select-item{
+		width: 70px;
+		display: inline-block;
+		position: relative;
+		z-index: 2;
+	}
+	.o2o-layer .select-wrap .select-item .arrow{
+		position: static;
+		display: inline-block;
+		width: 9px;
+		height: 5px;
+		margin-left: 5px;
+		vertical-align: 2px;
+	}
+	.o2o-layer .select-wrap .select-item .select-more{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -4px;
+		background: #fff;
+		border: 1px solid #ccc;
+	}
+	.o2o-layer .select-wrap .select-item .select-more a{
+		display: block;
+		padding: 0 5px;
+		line-height: 24px;
+	}
+	.o2o-layer .select-wrap .select-item .select-more a:hover{
+		background: #f7f7f7;
+	}
+	.o2o-layer .select-item .select-more .selected{
+		display: inline-block;
+		float: right;
+		width: 10px;
+		height: 7px;
+		margin-top: 8px;
+	}
+	/*列表*/
+	.o2o-layer .address-wrap .address-list{
+		clear: both;
+		height: 400px;
+		padding-bottom: 3px;
+		border: 1px solid #f0f0f0;
+	}
+	.o2o-layer .address-wrap .list-inner{
+		height: 351px;
+		overflow-y: auto;
+	}
+	.o2o-layer .address-wrap .detail .list-inner{
+		height: auto;
+	}
+	.o2o-layer .address-wrap .address-item{
+
+	}
+	.o2o-layer .address-wrap .address-item:hover,
+	.o2o-layer .address-wrap .detail .address-item{
+		background: #f3f3f3;
+	}
+	.o2o-layer .address-wrap .item-inner{
+		*zoom: 1;
+		margin: 0 12px;
+		padding: 10px 0;
+		border-bottom: 1px dotted #ccc;
+	}
+	.o2o-layer .address-wrap .detail .item-inner{
+		border: none;
+	}
+	.o2o-layer .address-wrap .item-inner:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility:hidden
+	}
+
+	.o2o-layer .address-item .sprite-address{
+		display: inline-block;
+		width: 19px;
+		height: 33px;
+		line-height: 26px;
+		text-align: center;
+		background: url(//static.360buyimg.com/item/main/1.0.22/widget/service/i/sprite-address.png) no-repeat 0 3px;
+		color: #fff;
+		vertical-align: top;
+	}
+	.o2o-layer .address-item dl{
+		vertical-align: middle;
+		float: right;
+		color: #999;
+		width: 255px;
+		margin: 2px 0 0 8px;
+		*display: inline;
+		*zoom: 1;
+	}
+	.o2o-layer .address-item dd{
+		color: #999;
+		margin-top: 4px;
+	}
+	.o2o-layer .address-item .address{
+		width: 255px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.o2o-layer .address-item .name{
+		display: inline-block;
+		width: 188px;
+		color: #333;
+		font-size: 14px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.o2o-layer .address-item dd:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility:hidden
+	}
+	.o2o-layer .address-item .closed{
+		position: relative;
+		display: inline-block;
+		line-height: 18px;
+		padding: 0 4px;
+		border: 1px solid #e4393c;
+		color: #e4393c;
+		font-size: 12px;
+		background: #fff;
+		margin-left: 5px;
+		vertical-align: 4px;
+	}
+	.o2o-layer .address-item .closed .tips{
+		display: none;
+		position: absolute;
+		z-index: 2;
+		top: 20px;
+		right: 0;
+		line-height: 40px;
+		padding: 0 15px;
+		color: #666;
+		border: 1px solid #cecbce;
+		white-space: nowrap;
+		background: #fff;
+		box-shadow: 0 0 10px #cecbce;
+	}
+	.o2o-layer .address-item .closed:hover .tips{
+		display: block;
+	}
+	.o2o-layer .address-item .price{
+		color: #e4393c;
+		font-size: 14px;
+	}
+	.o2o-layer .address-item .score{
+		position: relative;
+		float: right;
+		color: #e4393c;
+	}
+	.o2o-layer .address-item .score .tips{
+		display: none;
+		position: absolute;
+		z-index: 2;
+		top: 22px;
+		right: 0;
+		padding: 9px;
+		border: 1px solid #cecbce;
+		white-space: nowrap;
+		background: #fff;
+		box-shadow: 0 0 10px #cecbce;
+		color: #666;
+	}
+	.o2o-layer .score .tips ul{
+		width: 264px;
+		border: 1px solid #f0f0f0;
+		overflow: hidden;
+		zoom: 1;
+	}
+	.o2o-layer .score .tips li{
+		width: 66px;
+		height: 38px;
+		padding-top: 4px;
+		float: left;
+		text-align: center;
+	}
+	.o2o-layer .score .tips span{
+		display: block;
+	}
+	.o2o-layer .score .tips .arrow{
+		position: absolute;
+		top: -6px;
+		right: 10px;
+		width: 10px;
+		height: 6px;
+	}
+	.o2o-layer .score .tips .total{
+		background: #f2f2f2;
+		font-weight: bold;
+		color: #333;
+	}
+	.o2o-layer .score .tips .total span{
+		color: #e4393c;
+	}
+	.o2o-layer .address-item .score:hover .tips{
+		display: block;
+	}
+	.o2o-layer .tag1,
+	.o2o-layer .tag2{
+		display: inline-block;
+		line-height: 18px;
+		padding: 0 3px;
+		color: #fff;
+		margin: 0 3px 3px 0;
+	}
+	.o2o-layer .tag1:hover,
+	.o2o-layer .tag2:hover{
+		position: relative;
+	}
+
+	.o2o-layer .tag1{
+		background: #7accc8;
+	}
+	.o2o-layer .address-item .tag1 .tips,
+	.o2o-layer .address-item .tag2 .tips{
+		display: none;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		line-height: 40px;
+		padding: 0 15px;
+		color: #666;
+		border: 1px solid #cecbce;
+		white-space: nowrap;
+		background: #fff;
+		box-shadow: 0 0 10px #cecbce;
+	}
+	.o2o-layer .address-item .tag1:hover .tips,
+	.o2o-layer .address-item .tag2:hover .tips{
+		display: block;
+	}
+	.o2o-layer .tag2{
+		background: #7da7d9;
+	}
+	.o2o-layer .address-item .tel{
+		float: right;
+		color: #333;
+	}
+
+	.o2o-layer .address-wrap .pagination{
+		text-align: right;
+		padding-right: 10px;
+		margin-top: 15px;
+		color: #999;
+	}
+	.o2o-layer .address-wrap .pagination span{
+		margin-right: 10px;
+		vertical-align: 6px;
+	}
+	.o2o-layer .address-wrap .pagination em{
+		margin-left: 10px;
+		color: #e4393c;
+	}
+	.o2o-layer .address-wrap .pagination a{
+		display: inline-block;
+		width: 17px;
+		height: 17px;
+		margin-left: 10px;
+		background: #f7f7f7 url(//static.360buyimg.com/item/main/1.0.22/widget/service/i/sprite-pagination.png) no-repeat;
+		vertical-align: 2px;
+	}
+	.o2o-layer .address-wrap .pagination .prev{
+		background-position: -37px 4px;
+	}
+	.o2o-layer .address-wrap .pagination .next{
+		background-position: -54px 4px;
+	}
+	.o2o-layer .address-wrap .pagination .disabled-prev{
+		cursor: default;
+		background-position: -1px 4px;
+	}
+	.o2o-layer .address-wrap .pagination .disabled-next{
+		cursor: default;
+		background-position: -18px 4px;
+	}
+	.o2o-layer .confirm-btn{
+		display: block;
+		line-height: 30px;
+		background: #e4393c;
+		margin: 10px;
+		text-align: center;
+		color: #fff;
+	}
+	/*detail*/
+	.o2o-layer .o2o-con{
+		padding: 10px;
+	}
+	.o2o-layer .o2o-con h3{
+		font-weight: normal;
+		color: #333;
+		font-size: 14px;
+		line-height: 160%;
+		word-wrap: break-word;
+	}
+	.o2o-layer .o2o-con .sprite-im{
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		margin-left: 5px;
+		background: url(//static.360buyimg.com/item/main/1.0.22/widget/service/i/sprite-im-offline.png) no-repeat;
+		vertical-align: -3px;
+	}
+	.o2o-layer .o2o-con .con-item{
+		margin-top: 5px;
+	}
+	.o2o-layer .o2o-con .dt{
+		float: left;
+		width: 35px;
+		line-height: 26px;
+		color: #999;
+	}
+	.o2o-layer .o2o-con .dd{
+		margin-left: 35px;
+	}
+	.o2o-layer .o2o-price .dt{
+		line-height: 20px;
+	}
+	.o2o-layer .o2o-price .dd{
+		color: #e4393c;
+		font-size: 18px;
+	}
+	.o2o-layer .o2o-price .dd span{
+		font-size: 16px;
+		margin-right: 3px;
+	}
+	.o2o-layer .o2o-con .o2o-price{
+		padding-bottom: 12px;
+		border-bottom: 1px solid #f0f0f0;
+		margin: 8px 0 10px;
+	}
+	.o2o-layer .o2o-con .choose-wrap{
+		height: 112px;
+		overflow-y: auto;
+	}
+	.o2o-layer .o2o-con .item{
+		display: inline-block;
+		position: relative;
+		margin: 0 6px 6px 0;
+	}
+	.o2o-layer .o2o-con .item a{
+		display: block;
+		padding: 0 8px;
+		line-height: 26px;
+		border: 1px solid #ccc;
+	}
+	.o2o-layer .o2o-con .item a:hover,
+	.o2o-layer .o2o-con .selected a{
+		border-color: #e4393c;
+	}
+
+	.o2o-layer .o2o-con .disabled a {
+		border: 1px dashed #ccc;
+		cursor: not-allowed;
+		color: #999;
+	}
+
+	.o2o-layer .o2o-amount .dt{
+		line-height: 34px;
+	}
+	.o2o-layer .o2o-amount .choose-amount{
+		margin-top: 0;
+	}
+	.o2o-layer .o2o-btn{
+		padding: 5px 0 5px 0;
+		border-top: 1px solid #f0f0f0;
+		margin-top: 5px;
+	}
+	.o2o-layer .o2o-btn .back{
+		color: #6b75b3;
+	}
+	.o2o-layer .o2o-btn .back:hover{
+		color: #e4393c;
+	}
+	/*.o2o-layer .o2o-btn .btn-confirm,
+	.o2o-layer .o2o-btn .btn-cancel{
+		display: inline-block;
+		line-height: 30px;
+		padding: 0 28px;
+		margin-left: 14px;
+		border: 1px solid #ccc;
+		font-size: 12px;
+	}
+	.o2o-layer .o2o-btn .btn-confirm{
+		border-color: #e4393c;
+		background: #e4393c;
+		color: #fff;
+	}
+	.o2o-layer .o2o-btn .btn-cancel{
+		color: #666;
+	}*/
+
+	.btn-confirm{
+		display: block;
+		background: #e4393c;
+		text-align: center;
+		color: #fff;
+		margin: 0 12px;
+		line-height: 30px;
+	}
+	.btn-confirm:hover{
+		color:#fff;
+	}
+	.disabled{
+		background:#cfcfcf;
+		cursor: default;
+	}
+
+</style>
+<script>
+	//分页
+	var page = {
+		pageSize:10,
+		currentPage:1,
+		recordCount:1,
+		pageCount:1,
+		init:function (recordCount){
+			this.recordCount = recordCount;
+			this.pageCount = this.getPageCount();
+			if(recordCount == 0){
+				this.currentPage = 0;
+			}else{
+				this.currentPage = 1;
+			}
+		},
+		getPageCount:function () {
+			// 总条数/每页显示的条数=总页数
+			var size = this.recordCount / this.pageSize;
+			// 最后一页的条数
+			var mod = this.recordCount % this.pageSize;
+			if (mod != 0)
+				size++;
+			size = Math.floor(size);//取整
+			return this.recordCount == 0 ? 0 : size;
+		},
+		pageView:function (){
+			var paui = '<span>共'+ page.recordCount +'家门店</span>';
+			//页码显示
+			var pageNumUi = "<span><em>";
+			var pageCount = this.getPageCount();
+			pageNumUi += this.currentPage+"</em>/"+pageCount+"</span>";
+			//翻页按钮
+			var flipUi = '<a id="preva" onclick="page.prevPage();" href="#none"';
+			if(this.currentPage == 1){
+				flipUi += ' class="prev disabled-prev"';
+			}else{
+				flipUi += ' class="prev"';
+			}
+			flipUi += '></a><a id="nexta" onclick="page.nextPage();" href="#none" ';
+			if(this.currentPage == this.pageCount){
+				flipUi += 'class="next disabled-next"';
+			}else{
+				flipUi += 'class="next"';
+			}
+			flipUi += '></a>';
+			$("#pagecontrol").html(paui+pageNumUi+flipUi);
+		},
+		prevPage:function(){
+			if(this.currentPage -1 > 0){
+				this.currentPage -= 1;
+				this.pageView();
+			}
+			locShopList.currentPageList();
+			locShopList.prevPage();
+		},
+		nextPage:function(){
+			if(this.currentPage < this.pageCount){
+				this.currentPage += 1;
+				this.pageView();
+			}
+			locShopList.currentPageList();
+			locShopList.nextPage();
+		}
+	};
+
+	//地图展示
+	var mapControl = {
+		opts: {
+			width : 300,         // 信息窗口宽度
+			height: 275,          // 信息窗口高度
+			enableMessage:true   //设置允许信息窗发送短息
+		},
+		coordsAddrArray: [],
+
+		addClickHandler:function (content,marker,bigSize){
+			marker.addEventListener("click",function(e){
+						var p = e.target;
+						var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+						var optsSet = {};
+						if(bigSize == 3){
+							optsSet = {
+								width : 300,         // 信息窗口宽度
+								height: 277,          // 信息窗口高度
+								enableMessage:true   //设置允许信息窗发送短息
+							}
+						}else if(bigSize == 2){
+							optsSet = {
+								width : 300,         // 信息窗口宽度
+								height: 205,          // 信息窗口高度
+								enableMessage:true   //设置允许信息窗发送短息
+							}
+						}else if(bigSize == 1){
+							optsSet = {
+								width : 300,         // 信息窗口宽度
+								height: 167,          // 信息窗口高度
+								enableMessage:true   //设置允许信息窗发送短息
+							}
+						}else {
+							optsSet = {
+								width : 300,         // 信息窗口宽度
+								height: 207,          // 信息窗口高度
+								enableMessage:true   //设置允许信息窗发送短息
+							}
+						}
+						var infoWindow = new BMap.InfoWindow(content,optsSet);  // 创建信息窗口对象
+						clo2oMap.openInfoWindow(infoWindow,point); //开启信息窗口
+					}
+			);
+		},
+		//初始化界面
+		initMap : function () {
+			for(var i=0;i<this.coordsAddrArray.length;i++){
+				//
+				var telNo = '';
+				var viewPhone = '';
+				var zongheScore = '';
+				var serviceScore = '';
+				var levelScore = '';
+				var evnScore = '';
+				var type4s = '';
+				var type4sStr = '';
+				var jdCert = '';
+				var jdCertStr = '';
+				var storePhone = '';
+				var businessTime = '';
+				var storeImage = '';
+				if(this.coordsAddrArray[i][7] && this.coordsAddrArray[i][7] != undefined &&!jsUtil.isEmptyObj(this.coordsAddrArray[i][7])){
+					var locExtendInfo = this.coordsAddrArray[i][7];
+					telNo = locExtendInfo[8] ? locExtendInfo[8]+'' : '';
+					if(locExtendInfo != undefined){
+						storePhone = locExtendInfo[9] ? locExtendInfo[9]+'' : '';
+					}
+					if(storePhone != ''){
+						viewPhone = storePhone;
+					}else if(telNo != ''){
+						viewPhone = telNo;
+					}
+					var type4sState = locExtendInfo[12] ? locExtendInfo[12]+'' : '';
+					var jdCertState = locExtendInfo[13] ? locExtendInfo[13]+'' : '';
+
+					if(locExtendInfo[4] && locExtendInfo[5]){
+						businessTime = locExtendInfo[4]+'-'+locExtendInfo[5];
+					}
+					if(locExtendInfo[14] && locExtendInfo[14] != ''){
+						storeImage = locExtendInfo[14];
+					}
+					if(type4sState != ''){
+						if(type4sState == '1'){
+							type4s = '4s店';
+							type4sStr = '主机厂家授权的4S门店';
+						}else if(type4sState == '2'){
+							type4s = '维修店';
+							type4sStr = '具有行业维修资质的门店/维修厂';
+						}else if(type4sState == '3'){
+							type4s = '美容店';
+							type4sStr = '经营洗车、美容、贴膜相关服务的门店';
+						}
+					}
+					if(jdCertState == '1'){
+						jdCert = "京东认证";
+						jdCertStr = "京东用户到店享受优先服务";
+					}
+
+					zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
+					serviceScore = locExtendInfo[16] ? locExtendInfo[16]+'' : '';
+					levelScore = locExtendInfo[17] ? locExtendInfo[17]+'' : '';
+					evnScore = locExtendInfo[18] ? locExtendInfo[18]+'' : '';
+				}
+				var shopPhone = this.coordsAddrArray[i][6];
+				if(viewPhone == '' && shopPhone!=''){
+					viewPhone = shopPhone;
+				}
+				//
+				var myIcon = new BMap.Icon("//static.360buyimg.com/item/main/1.0.22/widget/service/i/sprite-icon.png", new BMap.Size(20, 30));
+				var val = this.coordsAddrArray[i][5];
+				myIcon.setImageOffset(new BMap.Size(-(Math.floor(val/10)*20), -(val%10)*30));
+				var newPoint = new BMap.Point(this.coordsAddrArray[i][1],this.coordsAddrArray[i][0]);
+				var marker = new BMap.Marker(newPoint,{icon:myIcon});  // 创建标注
+				var zContent = '<div class="address-tips">';
+				zContent += '       <a href="#none" class="close"></a>';
+				zContent += '       <i class="arrow"></i>';
+				zContent += '       <dl>';
+				zContent += '           <dt>' + this.coordsAddrArray[i][3] + '</dt>';
+				zContent += '           <dd class="address">' + this.coordsAddrArray[i][4] + '</dd>';
+				if(viewPhone != '') {
+					zContent += '           <dd>客服电话：' + viewPhone + '</dd>';
+				}
+				if(businessTime != '') {
+					zContent += '           <dd>营业时间：' + businessTime + '</dd>';
+				}
+				zContent += '           <dd>';
+				zContent += '               <span class="tag1">'+type4s;
+				if(type4sStr && type4sStr!=''){
+					zContent += '                <i class="tips">'+type4sStr+'</i>';
+				}
+				zContent += '               </span>';
+				zContent += '               <span class="tag2">'+jdCert;
+				if(jdCertStr && jdCertStr!=''){
+					zContent += '                <i class="tips">'+jdCertStr+'</i>';
+				}
+				zContent += '               </span>';
+				zContent += '           </dd>';
+				zContent += '           <dd>';
+				if(this.coordsAddrArray[i][7] != undefined && this.coordsAddrArray[i][7][14] && this.coordsAddrArray[i][7][14] != ''){
+					zContent += '               <a href="#none" class="pic"><img src="'+storeImage+'" alt="" />';
+				}
+				zContent += '           </dd>';
+				zContent += '       </dl>';
+				if(zongheScore != '') {
+					zContent += '       <ul class="score-tips">';
+					zContent += '           <li class="total">综合评分<span>' + zongheScore + '</span></li>';
+					zContent += '           <li>服务态度<span>' + serviceScore + '</span></li>';
+					zContent += '           <li>服务水平<span>' + levelScore + '</span></li>';
+					zContent += '           <li>门店环境<span>' + evnScore + '</span></li>';
+					zContent += '       </ul>';
+				}
+				zContent += '    </div>';
+				clo2oMap.addOverlay(marker);               // 将标注添加到地图中
+				var bigSize = 3;
+				if((this.coordsAddrArray[i][7] != undefined && this.coordsAddrArray[i][7][14] && this.coordsAddrArray[i][7][14] != '') && viewPhone != '' && zongheScore!=''){
+					bigSize = 3;
+				}else if(viewPhone != '' && zongheScore!=''){
+					bigSize = 2;
+				}else if(viewPhone != '' && zongheScore==''){
+					bigSize = 2;
+				}else if(viewPhone == '' && zongheScore!=''){
+					bigSize = 2;
+				}else {
+					bigSize = 1;
+				}
+				this.addClickHandler(zContent,marker,bigSize);
+			}
+			if(this.coordsAddrArray.length>0){
+				var poiTo = new BMap.Point(this.coordsAddrArray[0][1],this.coordsAddrArray[0][0]);
+				clo2oMap.panTo(poiTo);
+			}
+		},
+		selPointToMap : function (lng, lat) {
+			if(this.coordsAddrArray.length>0){
+				var new_point = new BMap.Point(lng,lat);
+				clo2oMap.panTo(new_point);
+			}
+		},
+		openToInfoWindow:function (locInfo) {
+			var telNo = '';
+			var viewPhone = '';
+			var zongheScore = '';
+			var serviceScore = '';
+			var levelScore = '';
+			var evnScore = '';
+			var type4s = '';
+			var type4sStr = '';
+			var jdCert = '';
+			var jdCertStr = '';
+			var storePhone = '';
+			var businessTime = '';
+			var storeImage = '';
+			if(locInfo[8] && locInfo[8] != undefined &&!jsUtil.isEmptyObj(locInfo[8])){
+				var locExtendInfo = locInfo[8];
+				telNo = locExtendInfo[8] ? locExtendInfo[8]+'' : '';
+				if(locExtendInfo != undefined){
+					storePhone = locExtendInfo[9] ? locExtendInfo[9]+'' : '';
+				}
+				if(storePhone != ''){
+					viewPhone = storePhone;
+				}else if(telNo != ''){
+					viewPhone = telNo;
+				}
+				var type4sState = locExtendInfo[12] ? locExtendInfo[12]+'' : '';
+				var jdCertState = locExtendInfo[13] ? locExtendInfo[13]+'' : '';
+
+				if(locExtendInfo[4] && locExtendInfo[5]){
+					businessTime = locExtendInfo[4]+'-'+locExtendInfo[5];
+				}
+				if(locExtendInfo[14] && locExtendInfo[14] != ''){
+					storeImage = locExtendInfo[14];
+				}
+				if(type4sState != ''){
+					if(type4sState == '1'){
+						type4s = '4s店';
+						type4sStr = '主机厂家授权的4S门店';
+					}else if(type4sState == '2'){
+						type4s = '维修店';
+						type4sStr = '具有行业维修资质的门店/维修厂';
+					}else if(type4sState == '3'){
+						type4s = '美容店';
+						type4sStr = '经营洗车、美容、贴膜相关服务的门店';
+					}
+				}
+				if(jdCertState == '1'){
+					jdCert = "京东认证";
+					jdCertStr = "京东用户到店享受优先服务";
+				}
+
+				zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
+				serviceScore = locExtendInfo[16] ? locExtendInfo[16]+'' : '';
+				levelScore = locExtendInfo[17] ? locExtendInfo[17]+'' : '';
+				evnScore = locExtendInfo[18] ? locExtendInfo[18]+'' : '';
+			}
+			var shopPhone = locInfo[7];
+			if(viewPhone == '' && shopPhone!=''){
+				viewPhone = shopPhone;
+			}
+			//
+			var myIcon = new BMap.Icon("//static.360buyimg.com/item/main/1.0.22/widget/service/i/sprite-icon.png", new BMap.Size(20, 30));
+			var val = locInfo[5];
+			myIcon.setImageOffset(new BMap.Size(-(Math.floor(val/10)*20), -(val%10)*30));
+			var newPoint = new BMap.Point(locInfo[1],locInfo[0]);
+			var marker = new BMap.Marker(newPoint,{icon:myIcon});  // 创建标注
+			var zContent = '<div class="address-tips">';
+			zContent += '       <a href="#none" class="close"></a>';
+			zContent += '       <i class="arrow"></i>';
+			zContent += '       <dl>';
+			zContent += '           <dt>' + locInfo[3] + '</dt>';
+			zContent += '           <dd class="address">' + locInfo[4] + '</dd>';
+			if(viewPhone != '') {
+				zContent += '           <dd>客服电话：' + viewPhone + '</dd>';
+			}
+			if(businessTime != '') {
+				zContent += '           <dd>营业时间：' + businessTime + '</dd>';
+			}
+			zContent += '           <dd>';
+			zContent += '               <span class="tag1">'+type4s;
+			if(type4sStr && type4sStr!=''){
+				zContent += '                <i class="tips">'+type4sStr+'</i>';
+			}
+			zContent += '               </span>';
+			zContent += '               <span class="tag2">'+jdCert;
+			if(jdCertStr && jdCertStr!=''){
+				zContent += '                <i class="tips">'+jdCertStr+'</i>';
+			}
+			zContent += '               </span>';
+			zContent += '           </dd>';
+			zContent += '           <dd>';
+			if(locInfo[8] != undefined && locInfo[8][14] && locInfo[8][14] != ''){
+				zContent += '               <a href="#none" class="pic"><img src="'+storeImage+'" alt="" />';
+			}
+			zContent += '           </dd>';
+			zContent += '       </dl>';
+			if(zongheScore != '') {
+				zContent += '       <ul class="score-tips">';
+				zContent += '           <li class="total">综合评分<span>' + zongheScore + '</span></li>';
+				zContent += '           <li>服务态度<span>' + serviceScore + '</span></li>';
+				zContent += '           <li>服务水平<span>' + levelScore + '</span></li>';
+				zContent += '           <li>门店环境<span>' + evnScore + '</span></li>';
+				zContent += '       </ul>';
+			}
+			zContent += '    </div>';
+			clo2oMap.addOverlay(marker);               // 将标注添加到地图中
+			var bigSize = 3;
+			if((locInfo[8] != undefined && locInfo[8][14] && locInfo[8][14] != '') && viewPhone != '' && zongheScore!=''){
+				bigSize = 3;
+			}else if(viewPhone != '' && zongheScore!=''){
+				bigSize = 2;
+			}else if(viewPhone != '' && zongheScore==''){
+				bigSize = 2;
+			}else if(viewPhone == '' && zongheScore!=''){
+				bigSize = 2;
+			}else {
+				bigSize = 1;
+			}
+			var optsSet = {};
+			if(bigSize == 3){
+				optsSet = {
+					width : 300,         // 信息窗口宽度
+					height: 277,          // 信息窗口高度
+					enableMessage:true   //设置允许信息窗发送短息
+				}
+			}else if(bigSize == 2){
+				optsSet = {
+					width : 300,         // 信息窗口宽度
+					height: 205,          // 信息窗口高度
+					enableMessage:true   //设置允许信息窗发送短息
+				}
+			}else if(bigSize == 1){
+				optsSet = {
+					width : 300,         // 信息窗口宽度
+					height: 167,          // 信息窗口高度
+					enableMessage:true   //设置允许信息窗发送短息
+				}
+			}else {
+				optsSet = {
+					width : 300,         // 信息窗口宽度
+					height: 207,          // 信息窗口高度
+					enableMessage:true   //设置允许信息窗发送短息
+				}
+			}
+			var infoWindow = new BMap.InfoWindow(zContent,optsSet);  // 创建信息窗口对象
+			clo2oMap.openInfoWindow(infoWindow,newPoint); //开启信息窗口
+			marker.addEventListener("click", function(){
+				clo2oMap.openInfoWindow(infoWindow,newPoint); //开启信息窗口
+			});
+		},
+		//初始化数据
+		addPointToMap:function (params) {
+			if(params){
+				var coordaddr = [];
+				coordaddr.push(params['lng']);//经度
+				coordaddr.push(params['lat']);//纬度
+				coordaddr.push(params['locShopId']);
+				coordaddr.push(params['shopName']);
+				coordaddr.push(params['addr']);
+				coordaddr.push(params['serialNo']);
+				coordaddr.push(params['shopPhone']);
+				coordaddr.push(params['extend']);
+				this.coordsAddrArray.push(coordaddr);
+			}
+		},
+		initMapList:function(coordAddrs){
+			for(var i=0;i<coordAddrs.length;i++){
+				var extend = [];
+				if (coordAddrs[i][8] && coordAddrs[i][8].length > 0){
+					extend = coordAddrs[i][8];
+				}
+				this.addPointToMap({
+					lng:coordAddrs[i][0],//经度
+					lat:coordAddrs[i][1],//纬度
+					locShopId:coordAddrs[i][2],//shopid
+					shopName:coordAddrs[i][3],//shopname
+					addr:coordAddrs[i][4],//address
+					serialNo:coordAddrs[i][5],//serialNo
+					shopPhone:coordAddrs[i][7],
+					extend:extend
+				});
+			}
+		},
+		//lat 维度39.916527,lng 经度116.397128
+		tranCoordQQToBd:function (lat,lng){
+			var x_pi = 3.14159265358979324 * 3000.0 / 180.0;
+			var x = lng, y = lat;
+			var z =Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * x_pi);
+			var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * x_pi);
+			lng = z * Math.cos(theta) + 0.0065;
+			lat = z * Math.sin(theta) + 0.006;
+			return [lat,lng];
+		},
+		//清除界面和数据
+		cleanAllMap:function () {
+			this.coordsAddrArray = [];
+			clo2oMap.clearOverlays();
+		}
+	}
+	//列表逻辑
+	var locShopList = {
+		modifyFlag:false,
+		backFlag:false,
+		initArea:true,
+		serviceObj:{
+			serviceid:null,
+			venderId:null,
+			pnam:null,
+			shopId:null,
+			shopName:null,
+			provId:null,
+			cityId:null,
+			countyId:null
+		},
+		localObj: {
+			addrCodeLv1: null,
+			addrCodeLv2: null,
+			addrCodeLv3: null
+		},
+		currentPageData:[],
+		//当前页数据准备
+		currentPageList:function (){
+			var pageCursor = (page.currentPage-1)*page.pageSize;
+			this.currentPageData = [];
+			if(page.recordCount>0){
+				if((coordsAddrs.length-pageCursor)>=page.pageSize){
+					for(var i=0;i<page.pageSize;i++){
+						this.currentPageData.push(coordsAddrs[pageCursor+i]);
+					}
+				}else{
+					for(var i=0;i<(coordsAddrs.length-pageCursor);i++){
+						this.currentPageData.push(coordsAddrs[pageCursor+i]);
+					}
+				}
+			}
+		},
+		//打开层初始化列表，1.初始化列表，2.初始化地图，3.初始化地址
+		initList:function (provinceId) {
+			$(".btn-confirm").addClass('disabled');
+			$("#buyBtnA").html("请选择门店");
+			$('#buyBtnA').data("state","no");
+			//首次地址
+			var areaArr;
+			if(provinceId != null) {
+				locShopList.localObj.addrCodeLv1 = provinceId
+			}else {
+				locShopList.localObj.addrCodeLv1 = 1
+			}
+			//准备当前页数据
+			this.currentPageList();
+			//初始化地图
+			mapControl.cleanAllMap();
+			mapControl.initMapList(this.currentPageData);
+			mapControl.initMap();
+			if(this.currentPageData.length>0){
+				$("#rightContext").html(this.listView());
+			}else{
+				var listLocShopHtml = '<div class="address-list"><div class="list-inner">';
+				listLocShopHtml += '当前地区无法购买，可以选择其他地区！</div></div>';
+				listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
+				$("#rightContext").html(listLocShopHtml);
+			}
+			page.pageView();
+			//初始化当前店数
+			$("#storeCount").html(page.recordCount);
+		},
+		showPriceRange:function (sku) {
+			$.ajax({
+				url: "//d.3.cn/basic/"+sku+"?type=spu",
+				dataType: 'jsonp',
+				cache: true,
+				success: function (data) {
+					console.log(data);
+					if(data && data.skulist){
+						locShopList.getPriceBySku(data.skulist, sku);
+					}
+				}
+			});
+		},
+		getPriceBySku:function (skulist, sku) {
+			var pdbp = "";
+			var skuIds = "";
+			if(skulist){
+				for(var i=0; i<skulist.length; i++){
+					skuIds += 'J_'+skulist[i]+',';
+				}
+			}
+			$.ajax({
+				url: "//p.3.cn/prices/mgets?type=1&pdtk="+(readCookie('pdtk') || '')+"&pduid="+getUid()+"&pdpin="+(readCookie('pin') || '')+"&pdbp=0&skuIds="+skuIds,
+				dataType: 'jsonp',
+				cache: true,
+				success: function (data) {
+					console.log(data);
+					if(data){
+						if(data.length==1){
+							var priceHtml = '<span>￥</span>'+data[0].p;
+							$("#itemPrice"+sku).html(priceHtml);
+						}
+						var max = 0;
+						var min = 0;
+						if(data.length > 0 && data[0].p != undefined && data[0].p != ''){
+							max = parseFloat(data[0].p);
+							min = parseFloat(data[0].p);
+						}
+						for(var i=0;i<data.length;i++){
+							if (parseFloat(data[i].p) > max) {
+								max = parseFloat(data[i].p);
+							}
+							if (parseFloat(data[i].p) < min) {
+								min = parseFloat(data[i].p);
+							}
+						}
+						if(max == min){
+							var priceHtml = '<span>￥</span>'+max;
+							$("#itemPrice"+sku).html(priceHtml);
+						}else {
+							var price = min + "-" + max;
+							var priceHtml = '<span>￥</span>'+price;
+							$("#itemPrice"+sku).html(priceHtml);
+						}
+					}
+				}
+			});
+		},
+		//地址选择更新列表，1.更新列表，2.更新地图
+		updateList:function (provinceId,cityId,countyId) {
+			$(".btn-confirm").addClass('disabled');
+			$("#buyBtnA").html("请选择门店");
+			$('#buyBtnA').data("state","no");
+			//调用服务c.3.cn
+			$.ajax({
+				url: '//c.3.cn/store/extend?venderId=' + pageConfig.venderId + '&storeGroupId=' + pageConfig.storeGroupId + '&provinceId=' + provinceId + '&cityId=' + cityId + '&countryId=' + countyId,
+				type: 'GET',
+				scriptCharset: "gbk",
+				dataType: 'jsonp',
+				success: function(data) {
+					console.log(data);
+					if(data && data.length>0) {
+						coordsAddrs = [];
+						var num = 0
+						for(var i=0;data.length>i;i++){
+							if(page.pageSize == num){
+								num = 0;
+							}
+							num = num + 1;
+							var coordaddr = [];
+							var coors = data[i].coordinate;
+							//经纬度处理
+							if(coors && coors!=""){
+								var corad = coors.split(",");
+								var temCoor = [];
+								if(corad[1]<53 && corad[0]>70){
+									temCoor = mapControl.tranCoordQQToBd(corad[1],corad[0]);
+								}
+								if(corad[0]<53 && corad[1]>70){
+									temCoor = mapControl.tranCoordQQToBd(corad[0],corad[1]);
+								}
+								coordaddr.push(temCoor[0]);
+								coordaddr.push(temCoor[1]);
+							}else{
+								coordaddr.push(39.922867);
+								coordaddr.push(116.403495);
+							}
+							coordaddr.push(data[i].id);
+							coordaddr.push(data[i].name);
+							coordaddr.push("地址："+data[i].fullAddress);
+							coordaddr.push(i+1);
+							coordaddr.push(data[i].addressId);
+							coordaddr.push(data[i].phone ? data[i].phone : '');
+							//extend扩展
+							var extend = [];
+							if (!jsUtil.isEmptyObj(data[i].extend)) {
+								extend.push(data[i].extend.storeStatus ? data[i].extend.storeStatus+'' : "");//0 storeStatus  门店状态（1,需预约;2,免预约）
+								extend.push(data[i].extend.deliveryToStore ? data[i].extend.deliveryToStore+'' : "");//1 deliveryToStore  是否支持发货到店 1,是；2,否
+								extend.push(data[i].extend.storeLeader ? data[i].extend.storeLeader+'' : "");//2 storeLeader  门店负责人姓名
+								extend.push(data[i].extend.storeLeaderPreNo ? data[i].extend.storeLeaderPreNo+'' : "");//3 storeLeaderPreNo  门店负责人身份证号
+								extend.push(data[i].extend.businessBeginTime ? data[i].extend.businessBeginTime+'' : "");//4 businessBeginTime  营业开始时间
+								extend.push(data[i].extend.businessEndTime ? data[i].extend.businessEndTime+'' : "");//5 businessEndTime   营业结束时间
+								extend.push(data[i].extend.pauseBeginTime ? data[i].extend.pauseBeginTime+'' : "");//6 pauseBeginTime  暂停开始日期
+								extend.push(data[i].extend.pauseEndTime ? data[i].extend.pauseEndTime+'' : "");//7 pauseEndTime   暂停结束日期
+								extend.push(data[i].extend.customer_service_land_line ? data[i].extend.customer_service_land_line+'' : "");//8 customer_service_land_line  客服座机
+								extend.push(data[i].extend.storePhone ? data[i].extend.storePhone+'' : "");//9 storePhone  客服400电话
+								extend.push(data[i].extend.business_license ? data[i].extend.business_license+'' : "");//10 business_license  营业执照号
+
+								extend.push(data[i].extend.unified_credit_agency_code ? data[i].extend.unified_credit_agency_code+'' : "");//11 unified_credit_agency_code 统一信用机构代码
+								extend.push(data[i].extend.store_type ? data[i].extend.store_type+'' : "");//12 store_type  门店类型（1,4s店；2，维修店；3，美容店）
+								extend.push(data[i].extend.is_jd_certification ? data[i].extend.is_jd_certification+'' : "");//13 is_jd_certification  是否京东认证（1，是；0，否）
+
+								var mdImg = data[i].extend.mendian_img ? data[i].extend.mendian_img+'' : "";
+								if(mdImg && mdImg!=''){
+									mdImg = jsUtil.getImageDomain(pageConfig.skuId) + 'n0/s70x70_' + mdImg;
+								}
+								extend.push(mdImg);//14 mendian_img  门店照片
+								extend.push(data[i].extend.zonghe_score ? data[i].extend.zonghe_score+'' : "");//15 zonghe_score  综合评分
+								extend.push(data[i].extend.service_score ? data[i].extend.service_score+'' : "");//16 service_score  服务态度评分
+								extend.push(data[i].extend.service_level_score ? data[i].extend.service_level_score+'' : "");//17 service_level_score  服务水平评分
+								extend.push(data[i].extend.mendian_evn_score ? data[i].extend.mendian_evn_score+'' : "");//18 mendian_evn_score  门店环境评分
+								extend.push(data[i].extend.commentTime ? data[i].extend.commentTime+'' : "");//19 commentTime  评分次数
+								coordaddr.push(extend);
+								coordaddr.push(data[i].suspendState);
+							}
+							//coordaddr.push(num);
+							coordsAddrs.push(coordaddr);
+						}
+						//准备当前页数据
+						page.init(data.length);
+						locShopList.currentPageList();
+						//初始化地图
+						mapControl.cleanAllMap();
+						mapControl.initMapList(locShopList.currentPageData);
+						mapControl.initMap();
+						//
+						$("#area1").show();
+						$("#rightContext").html(locShopList.listView());
+						page.pageView();
+						$("#storeCount").html(data.length);
+					}else{
+						coordsAddrs = [];
+						//准备当前页数据
+						page.init(0);
+						locShopList.currentPageData = [];
+						//初始化地图
+						mapControl.cleanAllMap();
+						mapControl.initMapList(locShopList.currentPageData);
+						mapControl.initMap();
+						//
+						$("#area1").show();
+						var listLocShopHtml = '<div class="address-list">';
+						listLocShopHtml += '当前地区无法购买，可以选择其他地区！</div>';
+						listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
+						$("#rightContext").html(listLocShopHtml);
+						page.pageView();
+						$("#storeCount").html(0);
+					}
+					//
+					var mFlag = jsUtil.getUrlParam("modifyFlag");
+					var shopId = jsUtil.getUrlParam("shopId");//179126
+					if(mFlag && shopId){
+						if($("#"+shopId).length > 0){
+							$("#"+shopId).addClass("current");
+							$(".btn-confirm").removeClass('disabled')
+							$("#buyBtnA").html("确定选择此门店");
+							$('#buyBtnA').data("state","yes");
+							for(var i=0;i<coordsAddrs.length;i++){
+								if(shopId == coordsAddrs[i][2]){
+									locShopList.serviceObj.shopId = coordsAddrs[i][2];
+									locShopList.serviceObj.shopName = coordsAddrs[i][3];
+								}
+							}
+						}
+					}
+				}
+			});
+		},
+		//选择厂家服务，1.地图显示厂家位置，2.列表切换详情
+		selectLocShop:function (params) {
+			//地图显示厂家位置，lng,lat,locshopid,addr,serialNo
+			//var coordaddr = [];
+			//改变列表选择样式
+			$(".list-inner").children(".address-item").removeClass("current");
+			$("#"+params).addClass("current");
+			$(".btn-confirm").removeClass('disabled')
+			$("#buyBtnA").html("确定选择此门店");
+			$('#buyBtnA').data("state","yes");
+			//
+			for(var i=0;i<coordsAddrs.length;i++){
+				if(params == coordsAddrs[i][2]){
+					locShopList.serviceObj.provId = $("#provinceSel").val();
+					locShopList.serviceObj.cityId = $("#citySel").val();
+					locShopList.serviceObj.countyId = $("#countySel").val();
+					locShopList.serviceObj.shopId = coordsAddrs[i][2];
+					locShopList.serviceObj.shopName = coordsAddrs[i][3];
+					//
+					mapControl.selPointToMap(coordsAddrs[i][1],coordsAddrs[i][0]);
+					mapControl.openToInfoWindow(coordsAddrs[i]);
+				}
+			}
+		},
+		selectLocShopData: function (locId){
+			var coordaddr = [];
+			for(var i=0;i<coordsAddrs.length;i++){
+				if(locId == coordsAddrs[i][2]){
+					//0-7的含义lng,lat,shopid,shopname,addr,serialNo,skuid,addrcode
+					coordaddr.push(coordsAddrs[i][0])
+					coordaddr.push(coordsAddrs[i][1]);
+					coordaddr.push(coordsAddrs[i][2]);
+					coordaddr.push(coordsAddrs[i][3]);
+					coordaddr.push(coordsAddrs[i][4]);
+					coordaddr.push(coordsAddrs[i][5]);
+					coordaddr.push(coordsAddrs[i][6]);
+					coordaddr.push(coordsAddrs[i][7]);
+					if (coordsAddrs[i][8] && coordsAddrs[i][8].length > 0){
+						var extend = [];
+						extend.push(coordsAddrs[i][8][0]);//storeStatus  门店状态（1,需预约;2,免预约）
+						extend.push(coordsAddrs[i][8][1]);//deliveryToStore  是否支持发货到店 1,是；2,否
+						extend.push(coordsAddrs[i][8][2]);//storeLeader  门店负责人姓名
+						extend.push(coordsAddrs[i][8][3]);//storeLeaderPreNo  门店负责人身份证号
+						extend.push(coordsAddrs[i][8][4]);//businessBeginTime  营业开始时间
+						extend.push(coordsAddrs[i][8][5]);//businessEndTime   营业结束时间
+						extend.push(coordsAddrs[i][8][6]);//pauseBeginTime  暂停开始日期
+						extend.push(coordsAddrs[i][8][7]);//pauseEndTime   暂停结束日期
+						extend.push(coordsAddrs[i][8][8]);//customer_service_land_line  客服座机
+						extend.push(coordsAddrs[i][8][9]);//storePhone  客服400电话
+						extend.push(coordsAddrs[i][8][10]);//business_license  营业执照号
+						extend.push(coordsAddrs[i][8][11]);//11 unified_credit_agency_code 统一信用机构代码
+						extend.push(coordsAddrs[i][8][12]);//12 store_type  门店类型（1,4s店；2，维修店；3，美容店）
+						extend.push(coordsAddrs[i][8][13]);//13 is_jd_certification  是否京东认证（1，是；0，否）
+						extend.push(coordsAddrs[i][8][14]);//14 mendian_img  门店照片
+						extend.push(coordsAddrs[i][8][15]);//15 zonghe_score  综合评分
+						extend.push(coordsAddrs[i][8][16]);//16 service_score  服务态度评分
+						extend.push(coordsAddrs[i][8][17]);//17 service_level_score  服务水平评分
+						extend.push(coordsAddrs[i][8][18]);//18 mendian_evn_score  门店环境评分
+						extend.push(coordsAddrs[i][8][19]);//19 commentTime  评分次数
+						coordaddr.push(extend);
+						coordaddr.push(coordsAddrs[i][9]);
+					}
+				}
+			}
+			return coordaddr;
+		},
+		listView:function (){
+			var listLocShopHtml =
+					'<div class="address-list"><div class="list-inner">';
+			for(var i=0;i<this.currentPageData.length;i++){
+				var telNo = '';
+				var storePhone = '';
+				var viewPhone = '';
+				var zongheScore = '';
+				var serviceScore = '';
+				var levelScore = '';
+				var evnScore = '';
+				var type4s = '';
+				var type4sStr = '';
+				var jdCert = '';
+				var jdCertStr = '';
+				var suspend = '';
+				var suspendStr = '';
+				if(this.currentPageData[i][8] && this.currentPageData[i][8] != undefined && !jsUtil.isEmptyObj(this.currentPageData[i][8])){
+					var locExtendInfo = this.currentPageData[i][8];
+					telNo = locExtendInfo[8] ? locExtendInfo[8]+'' : '';
+					if(this.currentPageData[i][8]!=undefined){
+						storePhone = locExtendInfo[9] ? locExtendInfo[9]+'' : '';
+					}
+
+					if(storePhone != ''){
+						viewPhone = storePhone;
+					}else if(telNo != ''){
+						viewPhone = telNo;
+					}
+					var type4sState = locExtendInfo[12] ? locExtendInfo[12]+'' : '';
+					var jdCertState = locExtendInfo[13] ? locExtendInfo[13]+'' : '';
+
+					var suspendState = this.currentPageData[i][9];
+
+					if(suspendState == '1'){
+						suspend = '暂停营业';
+						suspendStr = '暂停期内暂不接单，结束后恢复营业';
+					}
+
+					if(type4sState != ''){
+						if(type4sState == '1'){
+							type4s = '4s店';
+							type4sStr = '主机厂家授权的4S门店';
+						}else if(type4sState == '2'){
+							type4s = '维修店';
+							type4sStr = '具有行业维修资质的门店/维修厂';
+						}else if(type4sState == '3'){
+							type4s = '美容店';
+							type4sStr = '经营洗车、美容、贴膜相关服务的门店';
+						}
+					}
+					if(jdCertState == '1'){
+						jdCert = "京东认证";
+						jdCertStr = "京东用户到店享受优先服务";
+					}
+
+					zongheScore = locExtendInfo[15] ? locExtendInfo[15]+'' : '';
+					serviceScore = locExtendInfo[16] ? locExtendInfo[16]+'' : '';
+					levelScore = locExtendInfo[17] ? locExtendInfo[17]+'' : '';
+					evnScore = locExtendInfo[18] ? locExtendInfo[18]+'' : '';
+				}
+				var shopPhone = this.currentPageData[i][7];
+				if(viewPhone == '' && shopPhone!=''){
+					viewPhone = shopPhone;
+				}
+				listLocShopHtml += '       <div id="' + this.currentPageData[i][2] + '" class="address-item"><div class="item-inner">';
+				listLocShopHtml += '           <a href="#none" onclick="locShopList.selectLocShop('+ this.currentPageData[i][2] +')">';
+				listLocShopHtml += '               <i class="sprite-address">'+this.currentPageData[i][5]+'</i>';
+				listLocShopHtml += '               <dl>';
+				listLocShopHtml += '                   <dt>';
+				listLocShopHtml += '                       <span class="name">';
+				listLocShopHtml += this.currentPageData[i][3];
+				listLocShopHtml += '                       </span>';
+				if(suspend){
+					listLocShopHtml +='                         <span class="closed">'+suspend+'<i class="tips">'+suspendStr+'</i></span>';
+				}
+				listLocShopHtml += '                   </dt>';
+				listLocShopHtml += '                   <dd class="address">';
+				listLocShopHtml += this.currentPageData[i][4];
+				listLocShopHtml += '                   </dd>';
+				listLocShopHtml += '                   <dd>';//价格：
+				listLocShopHtml += '                       <span class="price" id="itemPrice'+this.currentPageData[i][6]+'"></span>';
+				if(zongheScore != '') {
+					listLocShopHtml += '                       <span class="score">评分' + zongheScore;
+					listLocShopHtml += '                           <div class="tips">';
+					listLocShopHtml += '                               <i class="arrow"></i>';
+					listLocShopHtml += '                               <ul>';
+					listLocShopHtml += '                                   <li class="total">综合评分<span>' + zongheScore + '</span></li>';
+					listLocShopHtml += '                                   <li>服务态度<span>' + serviceScore + '</span></li>';
+					listLocShopHtml += '                                   <li>服务水平<span>' + levelScore + '</span></li>';
+					listLocShopHtml += '                                   <li>门店环境<span>' + evnScore + '</span></li>';
+					listLocShopHtml += '                               </ul>';
+					listLocShopHtml += '                           </div>';
+					listLocShopHtml += '                       </span>';
+				}
+				listLocShopHtml += '                   </dd>';
+				listLocShopHtml += '                   <dd>';
+				listLocShopHtml += '                       <span class="tag1">'+type4s;
+				if(type4sStr && type4sStr!=''){
+					listLocShopHtml += '                          <i class="tips">'+type4sStr+'</i>';
+				}
+				listLocShopHtml += '                       </span>';
+				listLocShopHtml += '                       <span class="tag2">'+jdCert;
+				if(jdCertStr && jdCertStr !=''){
+					listLocShopHtml += '                          <i class="tips">'+jdCertStr+'</i>';
+				}
+				listLocShopHtml += '                       </span>';
+				listLocShopHtml += '                       <span class="tel">'+viewPhone+'</span>';
+				listLocShopHtml += '                   </dd>';
+				listLocShopHtml += '               </dl>';
+				listLocShopHtml += '           </a>';
+				listLocShopHtml += '       </div></div>';
+				//locShopList.showPriceRange(this.currentPageData[i][6]);
+			}
+			listLocShopHtml += '</div>';
+			listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
+			listLocShopHtml += '</div>';
+			return listLocShopHtml;
+		},
+		okSelectLocShop:function () {
+			//var locShopId = params[0];
+			//填充父页面
+			var state = $('#buyBtnA').data("state");
+			if(state && state == "no"){
+				return;
+			}
+			if(window.parent){
+				var selListEle = $(".list-inner").children(".current");
+				if(selListEle && selListEle.length > 0){
+					var sid = locShopList.serviceObj.shopId;//门店ID
+					var sname = locShopList.serviceObj.shopName;//门店ID
+					var provId = locShopList.serviceObj.provId;//门店ID
+					var cityId = locShopList.serviceObj.cityId;//门店ID
+					var countyId = locShopList.serviceObj.countyId;//门店ID
+//					window.parent.pageConfig.product.chooseLOCShop.setResult(sid,sname,provId,cityId,countyId);
+					$('#body_', window.parent.document).append('哈哈哈哈哈或');
+				}
+				//关闭层
+				window.parent.$.closeDialog();
+			}else{
+				alert("选择有误！请重新选择！");
+			}
+		},
+		//翻页
+		prevPage:function () {
+			//初始化地图
+			mapControl.cleanAllMap();
+			mapControl.initMapList(this.currentPageData);
+			mapControl.initMap();
+			//
+			$("#rightContext").html(this.listView());
+			page.pageView();
+		},
+		nextPage:function () {
+			//初始化地图
+			mapControl.cleanAllMap();
+			mapControl.initMapList(this.currentPageData);
+			mapControl.initMap();
+			//
+			$("#rightContext").html(this.listView());
+			page.pageView();
+		}
+	};
+	jsUtil = {
+		getUrlParam: function (name) {
+			//构造一个含有目标参数的正则表达式对象
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			//匹配目标参数
+			var r = window.location.search.substr(1).match(reg);
+			//返回参数值
+			if (r != null) return unescape(r[2]);
+			return null;
+		},
+		isEmptyObject:function (obj) {
+			if (JSON.stringify(obj) == '{}') {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isEmptyObj:function (obj) {
+			for (var n in obj) {
+				return false
+			}
+			return true;
+		}
+	}
+</script>
+
+<script>
+	var storeGroupId = jsUtil.getUrlParam("storeGroupId");
+	console.log(storeGroupId);
+	//获取省份下拉数据
+	$(document).ready(function(){
+
+		$.ajax({
+//			url: '//c.3.cn/store/address?venderId=621944&storeGroupId=71901',
+			url: '//c.3.cn/store/address?venderId=621944&storeGroupId='+storeGroupId,
+			type: 'GET',
+			scriptCharset: "gbk",
+			dataType: 'jsonp',
+			success: function(data) {
+				console.log(data);
+				if(data) {
+					var provinceSel = $("#provinceSel");
+					provinceSel.append("<option value=''>所有省会</option>");
+					//var flag = 0;
+					var pnam = decodeURIComponent(jsUtil.getUrlParam('pName'));
+					var mFlag = jsUtil.getUrlParam("modifyFlag");
+					var mProvinceId = jsUtil.getUrlParam("pid");
+					var mCityId = jsUtil.getUrlParam("cid");
+					var mCountyId = jsUtil.getUrlParam("ccid");
+					var fProvinceId = jsUtil.getUrlParam("provinceId");
+					var fCityId = jsUtil.getUrlParam("cityId");
+					if(mFlag){
+						locShopList.serviceObj.provId = mProvinceId;
+						locShopList.serviceObj.cityId = mCityId;
+						locShopList.serviceObj.countyId = mCountyId;
+					}
+					if(!mFlag){
+						provinceSel.append("<option value='"+fProvinceId+"' selected = 'selected'>" + pnam + "</option>");
+					}
+					$.each(data,function(key,value){
+						if(mFlag && key == mProvinceId){
+							if (!provinceSel.find('option[value="'+ key +'"]').length) {
+								provinceSel.append("<option value='"+ key +"' selected = 'selected'>" + value + "</option>");
+							}
+							$("strong").html(value);
+							getCity(mProvinceId,true);
+							if(mProvinceId && mCityId){
+								getCounty(mProvinceId,mCityId,true);
+							}
+							getStoreList(mProvinceId,"","");
+						}else if(!mFlag && key == fProvinceId){
+							if (!provinceSel.find('option[value="'+ key +'"]').length) {
+								provinceSel.append("<option value='"+ key +"' selected = 'selected'>" + value + "</option>");
+							}
+							$("strong").html(value);
+							getCity(key,true);
+							if(fProvinceId && fCityId){
+								getCounty(fProvinceId,fCityId,true);
+							}
+							getStoreList(key,"","");
+						}else{
+							provinceSel.append("<option value='"+ key +"'>" + value + "</option>");
+							$("#storeCount").html(0);
+							$("strong").html(unescape('%u5317%u4EAC'));
+							var listLocShopHtml = '<div class="address-list">';
+							listLocShopHtml += '当前地区无法购买，可以选择其他地区！</div>';
+							listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
+							$("#rightContext").html(listLocShopHtml);
+							//
+							$(".btn-confirm").addClass('disabled');
+							$("#buyBtnA").html("请选择门店");
+							$('#buyBtnA').data("state","no");
+						}
+					})
+					if (!citySel.find('option[value=""]').length) {
+						citySel.append("<option value=''>全部门店</option>")
+					}
+					if(mFlag && mProvinceId){
+						getCity(mProvinceId, false);
+					}else {
+						searchStoreInfo();
+					}
+				}
+			}
+		});
+
+		//选择省改变市
+		var provinceSel = $("#provinceSel");
+		provinceSel.change(function(){
+			var val = provinceSel.val();
+			$("#citySel").empty();
+			$("#countySel").empty();
+			var countySel = $("#countySel");
+			countySel.append("<option value=''>全部门店</option>");
+			if(val != "" && val != null && val != undefined){
+				getCity(val, false);
+			}else{
+				var citySel = $("#citySel");
+				citySel.append("<option value=''>全部门店</option>");
+				searchStoreInfo();
+			}
+		});
+
+		//选择市改变县
+		var citySel = $("#citySel");
+		citySel.change(function(){
+			$("#countySel").empty();
+			locShopList.serviceObj.countyId = '';
+			var val = citySel.val();
+			if(val != "" && val != null && val != undefined){
+				getCounty(provinceSel.val(),val,false);
+			}else{
+				var countySel = $("#countySel");
+				countySel.append("<option value=''>全部门店</option>");
+				searchStoreInfo();
+			}
+		});
+
+		var countySel = $("#countySel");
+		countySel.change(function(){
+			searchStoreInfo();
+		});
+
+	});
+
+	//获取二级地址
+	function getCity(provinceId, firstFlag){
+		$.ajax({
+			url: '//c.3.cn/store/address?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId,
+			type: 'GET',
+			scriptCharset: "gbk",
+			dataType: 'jsonp',
+			success: function(data) {
+				console.log(data);
+				var cityValue = "";
+				cityValue = 72;
+				$("#citySel").empty();
+				var mFlag = jsUtil.getUrlParam("modifyFlag");
+				var mCityId = jsUtil.getUrlParam("cid");
+				var citySel = $("#citySel");
+				if (!citySel.find('option[value=""]').length) {
+					citySel.append("<option value=''>全部门店</option>");
+				}
+				if(data) {
+					$.each(data,function(key,value){
+						//cityId.append("<option value='"+ key +"'>" + value + "</option>");
+						if (firstFlag && !mFlag && key == cityValue){
+							citySel.append("<option value='"+ key +"' selected = 'selected'>" + value + "</option>");
+							$("strong").html(value);
+						}else if(mFlag && mCityId !=null && key == mCityId){
+							citySel.append("<option value='"+ key +"' selected = 'selected'>" + value + "</option>");
+							$("strong").html(value);
+							if(provinceId && mCityId){
+								getCounty(provinceId,mCityId,false);
+							}
+						}else {
+							citySel.append("<option value='"+ key +"'>" + value + "</option>");
+						}
+					})
+					searchStoreInfo();
+				}else {
+					var listLocShopHtml = '<div class="address-list">';
+					listLocShopHtml += '当前地区无法购买，可以选择其他地区！</div>';
+					listLocShopHtml += '<div id="pagecontrol" class="pagination"></div>';
+					$("#rightContext").html(listLocShopHtml);
+				}
+			}
+		});
+	}
+
+
+	//获取三级地址
+	function getCounty(provinceId,cityId,firstFlag) {
+		$.ajax({
+			url: '//c.3.cn/store/address?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId + '&cityId=' + cityId,
+			type: 'GET',
+			scriptCharset: "gbk",
+			dataType: 'jsonp',
+			success: function(data) {
+				console.log(data);
+				var countyValue = "";
+				$("#countySel").empty();
+				var mFlag = jsUtil.getUrlParam("modifyFlag");
+				var mCountyId = jsUtil.getUrlParam("ccid");
+
+				var countySel = $("#countySel");
+				if (!countySel.find('option[value=""]').length) {
+					countySel.append("<option value=''>全部门店</option>");
+				}
+				if(data) {
+					$.each(data,function(key,value){
+						countySel.append("<option value='"+ key +"'>" + value + "</option>");
+					})
+					searchStoreInfo();
+				}
+			}
+		});
+	}
+
+	//列表全局数据
+	var coordsAddrs = [];
+	//获取门店列表
+	function getStoreList(provinceId,cityId,countyId) {
+		$.ajax({
+			url: '//c.3.cn/store/extend?venderId=621944&storeGroupId='+storeGroupId+'&provinceId=' + provinceId + '&cityId=' + cityId + '&countryId=' + countyId,
+			type: 'GET',
+			scriptCharset: "gbk",
+			dataType: 'jsonp',
+			success: function(data) {
+				console.log(data);
+				var num = 0;
+				if(data) {
+					coordsAddrs = [];
+					$.each(data,function(key,val){
+						if(page.pageSize == num){
+							num = 0;
+						}
+						num = num + 1;
+						var coordaddr = [];
+						var coors = val.coordinate;
+						var temCoor = [];
+						if(coors && coors!=""){
+							var corad = coors.split(",");
+
+							if(corad[1]<53 && corad[0]>70){
+								temCoor = mapControl.tranCoordQQToBd(corad[1],corad[0]);
+							}
+							if(corad[0]<53 && corad[1]>70){
+								temCoor = mapControl.tranCoordQQToBd(corad[0],corad[1]);
+							}
+						}else{
+							temCoor[0] = 39.922867;
+							temCoor[1] = 116.403495;
+						}
+						coordaddr.push(temCoor[0]);
+						coordaddr.push(temCoor[1]);
+						coordaddr.push(val.id);
+						coordaddr.push(val.name);
+						coordaddr.push("地址："+val.fullAddress);
+						coordaddr.push(num);
+						coordsAddrs.push(coordaddr);
+						coordaddr.push(val.phone ? val.phone:'');
+					})
+				}
+				if (num > 0)
+					page.init(num);
+				else
+					page.init(0);
+				locShopList.initList();
+			}
+		});
+	}
+
+
+	function searchStoreInfo(){
+
+		var provinceId = $("#provinceSel").val();
+		var cityId = $("#citySel").val();
+		var countyId = $("#countySel").val();
+		locShopList.updateList(provinceId,cityId,countyId);
+		$("strong").html($("#provinceSel").find("option:selected").text());
+	}
+
+</script>
+
+<body>
+
+<!--默认-->
+<div class="o2o-layer">
+	<div id="area1" class="ui-area-wrap">
+		<div class="loc-title fl">
+
+		</div>
+		<div class="select-address">
+
+		</div>
+		<div class="clr"></div>
+	</div>
+	<!-- 地图-->
+	<div id="allmap" class="map-wrap">
+	</div>
+	<div class="address-wrap">
+		<div class="select-wrap">
+			所在地：<select id="provinceSel" style="width: 75px"></select>
+			<select id="citySel" style="width: 75px"></select>
+			<select id="countySel" style="width: 75px"><option value="">全部门店</option></select>
+		</div>
+		<!-- 门店列表-->
+		<div id="rightContext"></div>
+		<div id="store-prompt"></div>            <!-- 分页-->
+		<div id="pagecontrol" class="pagination"></div>
+		<div id="buyBtn" class="o2o-btn btn-confirm"><a href="#none" onclick="locShopList.okSelectLocShop();" data-state="no" id="buyBtnA" class="btn-confirm">确定选择此门店</a></div>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript">
+
+	// 百度地图API功能-初始化
+	var clo2oMap = new BMap.Map("allmap");    // 创建Map实例
+	clo2oMap.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+	clo2oMap.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	clo2oMap.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+	clo2oMap.enableScrollWheelZoom(true);
+
+</script>
+</html>

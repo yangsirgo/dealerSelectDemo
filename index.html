@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body id="body_">
+<!--<button>点击出地图弹窗</button>-->
+</body>
+</html>
+<script src="http://js.xcar.com.cn/common/1.7.2.min.js"></script>
+<script>
+	/* jdf-1.0.0/ ui.js Date:2017-10-11 16:21:23 */
+	!function () {
+		if ("undefined" == typeof $.ui)$.ui = {}; else if ($.ui && "2.0.0" == $.ui.version && "JDF" == $.ui.author)return !1;
+		!function (a, b) {
+			function c(a) {
+				return "[object Object]" === Object.prototype.toString.call(a)
+			}
+
+			function d(a) {
+				try {
+					a = "true" === a ? !0 : "false" === a ? !1 : "null" === a ? null : +a + "" === a ? +a : /(?:\{[\s\S]*\}|\[[\s\S]*\])$/.test(a) ? JSON.parse(a) : a
+				} catch (c) {
+					a = b
+				}
+				return a
+			}
+
+			function e(a) {
+				var g, h, c = {}, e = a && a.attributes, f = e && e.length;
+				for (; f--;)h = e[f], g = h.name, "data-" === g.substring(0, 5) && (g = g.substring(5), h = d(h.value), h === b || (c[g] = h));
+				return c
+			}
+
+			function f() {
+				var e, b = [].slice.call(arguments), d = b.length;
+				for (; d--;)e = e || b[d], c(b[d]) || b.splice(d, 1);
+				return b.length ? a.extend.apply(null, [!0, {}].concat(b)) : e
+			}
+
+			a.ui.guid = 0;
+			function g(b, c) {
+				function d(c, g) {
+					var h = this;
+					h.el = a(c);
+					h.options = f(d.options, e(c), g);
+					return h.name = b.toLowerCase(), a.ui.guid++, h.guid = a.ui.guid, h.options.hasCssLink && h.options.cssLinkVersion && h.options.baseVersion && "undefined" != typeof seajs ? seajs.use(("https:" == document.location.protocol ? "//" : "http://") + "misc.360buyimg.com/jdf/" + h.options.baseVersion + "/ui/" + b + "/" + h.options.cssLinkVersion + "/" + b + ".css", function () {
+						h.init()
+					}) : h.init(), /isdebug=(-\d)*-0/.test(location.search) && window.pageConfig && (window.pageConfig.uiLog ? window.pageConfig.uiLog.push(h) : window.pageConfig.uiLog = [h], console.log(h)), h
+				}
+
+				var g = ["options"];
+				for (var h = 0; h < g.length; h++) {
+					var i = g[h];
+					c[i] && (d[i] = c[i]), delete c[i]
+				}
+				for (var h in c)d.prototype[h] = c[h];
+				return d
+			}
+
+			a.ui.fn = function (b) {
+				var b = b.toLowerCase();
+				a.fn[b] = function (c) {
+					var d;
+					return a.each(this, function (e, f) {
+						d = new a.ui[b](f, c)
+					}), d
+				}
+			}, a.ui.define = function (b, c) {
+				a.ui[b] = g(b, c), a.ui.fn(b)
+			}
+		}(jQuery), function (a) {
+			var c = navigator.userAgent.toLowerCase();
+			"undefined" == typeof a.browser ? a.browser = {
+				version: (c.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1],
+				safari: /webkit/.test(c),
+				opera: /opera/.test(c),
+				msie: /msie/.test(c) && !/opera/.test(c) || /trident/.test(c),
+				mozilla: /mozilla/.test(c) && !/(compatible|webkit)/.test(c)
+			} : (a.browser.webkit || (a.browser.webkit = /webkit/.test(c)), a.browser.mozilla && (a.browser.msie = /trident/.test(c), a.browser.mozilla = !a.browser.msie)), a.extend(a.browser, function () {
+				{
+					var a = navigator.userAgent;
+					navigator.appVersion
+				}
+				return {
+					mobile: !!a.match(/AppleWebKit.*Mobile.*/),
+					ios: !!a.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+					android: a.indexOf("Android") > -1 || a.indexOf("Linux") > -1,
+					iPhone: a.indexOf("iPhone") > -1,
+					iPad: a.indexOf("iPad") > -1,
+					webApp: -1 == a.indexOf("Safari")
+				}
+			}()), a.browser.isMobile = function () {
+				return a.browser.mobile || a.browser.ios || a.browser.android
+			}, a.browser.isIE6 = function () {
+				return a.browser.msie && 6 == a.browser.version
+			}, a.browser.isIE7 = function () {
+				return a.browser.msie && 7 == a.browser.version
+			}, a.browser.isIE8 = function () {
+				return a.browser.msie && 8 == a.browser.version
+			}, a.browser.isIE9 = function () {
+				return a.browser.msie && 9 == a.browser.version
+			}, a.browser.isIE10 = function () {
+				return a.browser.msie && 10 == a.browser.version
+			}, a.browser.isIE11 = function () {
+				return a.browser.msie && 11 == a.browser.version
+			}, a.page = function () {
+			}, a.page.doc = function () {
+				return "BackCompat" == document.compatMode ? document.body : document.documentElement
+			}, a.page.clientWidth = function () {
+				return a.page.doc().clientWidth
+			}, a.page.clientHeight = function () {
+				return a.page.doc().clientHeight
+			}, a.page.docWidth = function () {
+				return Math.max(a.page.doc().clientWidth, a.page.doc().scrollWidth)
+			}, a.page.docHeight = function () {
+				return Math.max(a.page.doc().clientHeight, a.page.doc().scrollHeight)
+			}, "undefined" == typeof a.contains && (a.contains = function (a, b) {
+				return a.compareDocumentPosition ? !!(16 & a.compareDocumentPosition(b)) : a !== b && a.contains(b)
+			}), a.throttle = function (a, b) {
+				var c, d, e, f;
+				var g = 0;
+				var h = function () {
+					g = new Date, e = null, f = a.apply(c, d)
+				};
+				return function () {
+					var i = new Date;
+					var j = b - (i - g);
+					return c = this, d = arguments, 0 >= j ? (clearTimeout(e), e = null, g = i, f = a.apply(c, d)) : e || (e = setTimeout(h, j)), f
+				}
+			}, a.tpl = function (a, b) {
+				var c = "var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('" + a.replace(/[\r\t\n]/g, " ").split("<%").join("	").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("	").join("');").split("%>").join("p.push('").split("\r").join("\\'") + "');}return p.join('');";
+				return fn = new Function("obj", c), b ? fn(b) : fn
+			}
+		}(jQuery), function (a) {
+			if (a.browser.isMobile()) {
+				var c, b = {};
+
+				function d(a) {
+					return "tagName" in a ? a : a.parentNode
+				}
+
+				function e(a, b, c, d) {
+					var e = Math.abs(a - b), f = Math.abs(c - d);
+					return e >= f ? a - b > 0 ? "Left" : "Right" : c - d > 0 ? "Up" : "Down"
+				}
+
+				var g, f = 750;
+
+				function h() {
+					g = null, b.last && (b.el.trigger("longTap"), b = {})
+				}
+
+				function i() {
+					g && clearTimeout(g), g = null
+				}
+
+				a(document).ready(function () {
+					var j, k;
+					a(document.body).bind("touchstart", function (e) {
+						j = Date.now(), k = j - (b.last || j), b.el = a(d(e.target)), c && clearTimeout(c), b.x1 = e.pageX, b.y1 = e.pageY, k > 0 && 250 >= k && (b.isDoubleTap = !0), b.last = j, g = setTimeout(h, f)
+					}).bind("touchmove", function (a) {
+						i(), b.x2 = a.pageX, b.y2 = a.pageY
+					}).bind("touchend", function () {
+						i(), b.isDoubleTap ? (b.el.trigger("doubleTap"), b = {}) : b.x2 && Math.abs(b.x1 - b.x2) > 30 || b.y2 && Math.abs(b.y1 - b.y2) > 30 ? (b.el.trigger("swipe") && b.el.trigger("swipe" + e(b.x1, b.x2, b.y1, b.y2)), b = {}) : "last" in b && (b.el.trigger("tap"), c = setTimeout(function () {
+							c = null, b.el.trigger("singleTap"), b = {}
+						}, 250))
+					}).bind("touchcancel", function () {
+						c && clearTimeout(c), g && clearTimeout(g), g = c = null, b = {}
+					})
+				}), ["swipe", "swipeLeft", "swipeRight", "swipeUp", "swipeDown", "doubleTap", "tap", "singleTap", "longTap"].forEach(function (b) {
+					a.fn[b] = function (a) {
+						return this.bind(b, a)
+					}
+				})
+			}
+		}(jQuery)
+	}();
+</script>
+<script>
+	!function (a) {
+		a.ui.define("dialog", {
+			options: {
+				hasCssLink: !0,
+				baseVersion: "1.0.0",
+				cssLinkVersion: "1.0.0",
+				maskHas: !0,
+				maskClass: "ui-mask",
+				maskIframe: !1,
+				maskClose: !1,
+				opacity: .15,
+				zIndex: 9998,
+				type: "text",
+				source: null,
+				extendMainClass: null,
+				autoIframe: !0,
+				autoOpen: !0,
+				autoCloseTime: 0,
+				title: !0,
+				hasButton: !1,
+				submitButton: "\u786e\u8ba4",
+				cancelButton: "\u53d6\u6d88",
+				onSubmit: null,
+				onCancel: null,
+				onBeforeClose: null,
+				closeButton: !0,
+				onReady: null,
+				width: 480,
+				height: null,
+				fixed: !1,
+				autoUpdate: !1,
+				maskId: null,
+				mainId: null,
+				contentId: null,
+				titleId: null,
+				iframeName: "dialogIframe",
+				iframeTimestamp: !0
+			},
+			init: function () {
+				var b = this.options;
+				a.browser.isIE6() && (b.fixed = !1), this.createMain(), this.createMask(), this.mainStyle(), b.autoOpen ? this.open() : this.hide(), this.bind()
+			},
+			show: function () {
+				this.mask && this.mask.show(), this.el.show()
+			},
+			hide: function () {
+				this.mask && this.mask.hide(), this.el.hide()
+			},
+			tpl: {
+				mask: '<div class="ui-mask"></div>',
+				close: '<a class="ui-dialog-close" title="\u5173\u95ed"><span class="ui-icon ui-icon-delete"></span></a>',
+				title: '<div class="ui-dialog-title">						<span><%=title%></span>					</div>				',
+				wrap: '<div class="ui-dialog"></div>',
+				conten: '<div class="ui-dialog-content"></div>',
+				button: '<div class="ui-dialog-btn">						<%if($.trim(submit)){%><a class="ui-dialog-btn-submit"><%=submit%></a><%}%>						<%if($.trim(cancel)){%><a class="ui-dialog-btn-cancel"><%=cancel%></a><%}%>					</div>				'
+			},
+			createMain: function () {
+				var c = this.options;
+				var d = "";
+				c.title && (d = a.tpl(this.tpl.title, {title: c.title}));
+				var e = a.tpl(this.tpl.button, {submit: this.options.submitButton, cancel: this.options.cancelButton});
+				var f = d + this.tpl.conten + (c.hasButton ? e : "");
+				this.el = a(this.tpl.wrap), c.extendMainClass && this.el.addClass(c.extendMainClass), a(f).appendTo(this.el), this.el.appendTo("body"), this.content = this.el.find(".ui-dialog-content"), this.title = this.el.find(".ui-dialog-title"), c.mainId && this.el.attr("id", c.mainId), c.contentId && this.content.attr("id", c.contentId), c.titleId && this.title.attr("id", c.titleId), c.closeButton && this.el.append(this.tpl.close)
+			},
+			createMask: function () {
+				var b = this;
+				var c = this.options;
+				if (c.maskHas) {
+					{
+						this.mask = a(document.createElement("div"))
+					}
+					this.mask.addClass(c.maskClass).css({
+						position: "absolute",
+						left: 0,
+						top: 0,
+						opacity: c.opacity,
+						zIndex: c.zIndex,
+						backgroundColor: "#000",
+						width: a.page.docWidth(),
+						height: a.page.docHeight()
+					}), c.maskId && this.mask.attr("id", c.maskId), a("." + c.maskClass)[0] || this.mask.appendTo("body"), (a.browser.isIE6() || c.maskIframe) && this.mask.append('<iframe src="about:blank" class="jdMaskIframe" frameBorder="0" style="width:100%;height:100%;position:absolute;z-index:' + (c.zIndex + 1) + ';opacity:0;filter:alpha(opacity=0);top:0;left:0;">'), a(window).resize(function () {
+						b.mask.css({width: a.page.docWidth(), height: a.page.docHeight()})
+					})
+				}
+			},
+			getPadding: function (a) {
+				return {
+					width: parseInt(a.css("paddingLeft"), 10) + parseInt(a.css("paddingRight"), 10),
+					height: parseInt(a.css("paddingTop"), 10) + parseInt(a.css("paddingBottom"), 10)
+				}
+			},
+			mainStyle: function () {
+				var b = this.options;
+				b.title && (b.height = b.height ? b.height + 28 : b.height, this.title.css({width: b.width - this.getPadding(this.content).width})), this.content.css({
+					height: b.height ? b.height : "",
+					width: b.width ? b.width - this.getPadding(this.content).width : "",
+					overflow: "hidden"
+				}), b.width && this.el.css({width: b.width});
+				var c = b.fixed && !a.browser.isIE6() ? "fixed" : "absolute";
+				this.el.css({
+					position: c,
+					zIndex: b.zIndex + 2,
+					display: "block",
+					overflow: "hidden"
+				}), this.updateMain()
+			},
+			updateMain: function () {
+				var b = this.options;
+				var c = a.page.docWidth() != a.page.clientWidth() ? 16 : 0;
+				var d = b.fixed ? 0 : a(document).scrollTop();
+				var e = b.fixed ? 0 : a(document).scrollLeft();
+				var f = (a.page.clientHeight() - this.el.outerHeight()) / 2 + d;
+				var g = a.browser.msie && a.browser.version < 10 ? 0 : 8;
+				var h = (a.page.clientWidth() - c - (b.width ? b.width + g : 0)) / 2 + e;
+				0 > f && (f = 0), 0 > h && (h = 0), this.el.css({top: f, left: h})
+			},
+			bind: function () {
+				var b = this;
+				var c = this.options;
+				this.options.closeButton && this.el.find(".ui-dialog-close").bind("click", function () {
+					b.close()
+				}), this.options.autoUpdate && a(window).resize(function () {
+					b.updateMain()
+				}), c.hasButton && (this.el.find(".ui-dialog-btn-submit").bind("click", function () {
+					c.onSubmit && c.onSubmit.call(this)
+				}), this.el.find(".ui-dialog-btn-cancel").bind("click", function () {
+					b.close()
+				})), this.options.maskHas && this.options.maskClose && a(this.mask).bind("click", function () {
+					b.close()
+				})
+			},
+			open: function () {
+				this.openType(), this.autoClose(), this.show(), this.iframeSet(), this.options.onReady && this.options.onReady.call(this)
+			},
+			openType: function () {
+				var b = this.options;
+				var c = this;
+				switch (b.type) {
+					case"text":
+						this.content.html(b.source);
+						break;
+					case"html":
+						a(b.source).clone().appendTo(this.content);
+						break;
+					case"iframe":
+						var d = {width: "100%", height: "100%"};
+						b.iframeTimestamp && !/&t=/.test(b.source) && (b.source += (b.source.indexOf("?") > -1 ? "&" : "?") + "t=" + (new Date).getTime()), this.iframe = a('<iframe src="' + b.source + '" id="' + b.iframeName + '" name="' + b.iframeName + '" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" style="border:0"></iframe>').css(d).appendTo(this.content);
+						break;
+					case"image":
+						var e = b.width ? 'width="' + b.width + '"' : "";
+						var f = b.height ? 'height="' + b.height + '"' : "";
+						var g = a("<img src=" + b.source + " " + e + f + "/>");
+						g.appendTo(this.content), g.bind("load", function () {
+							c.updateMain()
+						});
+						break;
+					case"json":
+				}
+				c.updateMain()
+			},
+			close: function () {
+				var a = this.options;
+				this.options.autoCloseTime;
+				a.onBeforeClose && a.onBeforeClose.call(this), this.el.remove(), this.mask && this.mask.remove(), a.onCancel && a.onCancel.call(this)
+			},
+			autoClose: function () {
+				var b = this;
+				var c = this.options.autoCloseTime;
+				if (c) {
+					var d = c;
+					a("<div class='ui-dialog-autoclose'><span id='ui-autoclose'>" + d + "</span>\u79d2\u540e\u81ea\u52a8\u5173\u95ed</div>").appendTo(this.el), clearInterval(window.autoCloseTimerDialog), window.autoCloseTimerDialog = setInterval(function () {
+						d--, a("#ui-autoclose").html(d), 0 == d && (d = c, b.close(), clearInterval(window.autoCloseTimerDialog))
+					}, 1e3), this.updateMain()
+				}
+			},
+			getIframeHeight: function (a) {
+				var b = a[0].contentWindow.document;
+				return b.body.scrollHeight && b.documentElement.scrollHeight ? Math.min(b.body.scrollHeight, b.documentElement.scrollHeight) : b.documentElement.scrollHeight ? b.documentElement.scrollHeight : b.body.scrollHeight ? b.body.scrollHeight : void 0
+			},
+			syncHeight: function () {
+				var a = this;
+				var b;
+				try {
+					b = a.getIframeHeight(a.iframe)
+				} catch (c) {
+				}
+				b && (a.iframe.css({height: b}), a.updateMain())
+			},
+			iframeSet: function () {
+				var a = this;
+				var b = this.options;
+				"iframe" == b.type && b.autoIframe && this.iframe.one("load", function () {
+					a.syncHeight()
+				})
+			}
+		}), a.closeDialog = function () {
+			a(".ui-dialog,.ui-mask").remove(), clearInterval(window.autoCloseTimerDialog)
+		}
+	}(jQuery);
+</script>
+<script>
+	$(function(){
+		var params = {
+			storeGroupId:71901,
+			venderId:621944,
+			pName:encodeURIComponent('上海'),
+			isNarrow:false,
+			provinceId:2,
+			cityId:2813,
+			countyId:51976,
+			shopId:1
+		}
+		var url_str = $.param(params);
+		$("body").dialog({
+			width: 900,
+			height: 470,
+			title: "\u5730\u56fe",
+			type: "iframe",
+			maskClose: !0,
+			autoIframe: !1,
+			source: './jd_map.html?'+url_str,
+			maskHas:!1
+		})
+//		$(document).unbind('click');
+//		$(document).click(function(){
+//			$(document).unbind('click');
+//			return false;
+//		})
+	})
+
+
+</script>
